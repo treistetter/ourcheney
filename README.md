@@ -35,7 +35,8 @@ python3 -m http.server 8000
 
 Then open `http://localhost:8000/`.
 
-Do not open the HTML files directly from disk. Root-relative links such as `/history/` require a local web server.
+Do not open the HTML files directly from disk. Directory routes such as `history/`
+require a local web server.
 
 Run the dependency-free structural check with:
 
@@ -72,11 +73,14 @@ Never add Airtable API keys, base IDs, private response data, or other credentia
 1. Push the repository to GitHub.
 2. In **Settings → Pages**, choose **Deploy from a branch**.
 3. Select the production branch (normally `main`) and the repository root (`/`).
-4. Keep the included `CNAME` file for `ourcheney.org`.
-5. Configure the required DNS records at the domain registrar.
-6. After GitHub verifies the domain, enable **Enforce HTTPS**.
+4. To use `ourcheney.org`, add it under **Custom domain** in the Pages settings
+   and configure the required DNS records at the domain registrar.
+5. After GitHub verifies a custom domain, enable **Enforce HTTPS**.
 
 The included `.nojekyll` file tells GitHub Pages to publish the repository as-is.
+Local assets and routes use repository-relative URLs, so the site works both at
+the project URL (`https://treistetter.github.io/ourcheney/`) and at a future
+custom domain.
 
 ## Content handling
 

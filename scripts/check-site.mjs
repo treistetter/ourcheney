@@ -17,16 +17,6 @@ function walk(directory) {
   }
 }
 
-function routeToFile(urlPath) {
-  const cleanPath = urlPath.split("#")[0].split("?")[0];
-  const localPath = cleanPath.startsWith("/")
-    ? join(root, cleanPath)
-    : join(root, cleanPath);
-
-  if (cleanPath.endsWith("/")) return join(localPath, "index.html");
-  return localPath;
-}
-
 function checkFile(path) {
   const source = readFileSync(path, "utf8");
   const relativePath = path.slice(root.length + 1);
@@ -69,6 +59,7 @@ function checkFile(path) {
   for (const value of attributes) {
     if (
       value.startsWith("http") ||
+      value.startsWith("//") ||
       value.startsWith("mailto:") ||
       value.startsWith("data:") ||
       value.startsWith("#")
@@ -79,10 +70,16 @@ function checkFile(path) {
       continue;
     }
 
-    const [urlPath, fragment] = value.split("#");
-    const target = urlPath.startsWith("/")
-      ? routeToFile(urlPath)
-      : resolve(dirname(path), urlPath);
+    if (value.startsWith("/")) {
+      errors.push(
+        `${relativePath}: root-relative URL ${value} will not work from a GitHub Pages project path`
+      );
+      continue;
+    }
+
+    const [urlWithQuery, fragment] = value.split("#");
+    const urlPath = urlWithQuery.split("?")[0];
+    const target = resolve(dirname(path), urlPath);
 
     if (!existsSync(target)) {
       errors.push(`${relativePath}: missing local target ${value}`);
