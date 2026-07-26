@@ -10,7 +10,8 @@ The site supports a world-class indoor track in Summerhill while making the case
 - `/history/` — Our History
 - `/ownership/` — A Better Ownership Model
 - `/public-value/` — What Is the Deal Worth?
-- `/the-ask/` — The Ask
+- `/goals/` — Goals
+- `/plan/` — Five-step organizing plan
 - `/next-step/` — Community Partnership Agreement
 - `/petition/` — Petition and Tally signature form
 - `/stories/` — Share Your Story
