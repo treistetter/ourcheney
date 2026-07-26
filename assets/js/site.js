@@ -3,45 +3,34 @@
 
   var config = window.OUR_CHENEY_CONFIG || {};
 
-  function mountTallyForm() {
-    var mount = document.querySelector("[data-tally-mount]");
-    if (!mount || !config.tallyFormId) return;
+  function mountTallyForms() {
+    var mounts = document.querySelectorAll("[data-tally-mount]");
+    var formMounted = false;
 
-    var frame = document.createElement("iframe");
-    frame.className = "tally-frame";
-    frame.title = "Add Your Voice campaign form";
-    frame.loading = "lazy";
-    frame.src =
-      "https://tally.so/embed/" +
-      encodeURIComponent(config.tallyFormId) +
-      "?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1";
+    mounts.forEach(function (mount) {
+      var configKey = mount.getAttribute("data-tally-config") || "tallyFormId";
+      var formId = config[configKey];
+      if (!formId) return;
 
-    mount.replaceChildren(frame);
+      var frame = document.createElement("iframe");
+      frame.className = "tally-frame";
+      frame.title = mount.getAttribute("data-tally-title") || "Our Cheney form";
+      frame.loading = "lazy";
+      frame.src =
+        "https://tally.so/embed/" +
+        encodeURIComponent(formId) +
+        "?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1";
+
+      mount.replaceChildren(frame);
+      formMounted = true;
+    });
+
+    if (!formMounted) return;
 
     var embedScript = document.createElement("script");
     embedScript.src = "https://tally.so/widgets/embed.js";
     embedScript.async = true;
     document.body.appendChild(embedScript);
-  }
-
-  function configureStoryLinks() {
-    var links = document.querySelectorAll("[data-story-link]");
-    if (!links.length) return;
-
-    var email = config.storyEmail || "stories@yourdomain.org";
-    var href =
-      "mailto:" +
-      email +
-      "?subject=" +
-      encodeURIComponent("My Phoenix Park Story");
-
-    links.forEach(function (link) {
-      link.href = href;
-    });
-
-    document.querySelectorAll("[data-story-email]").forEach(function (node) {
-      node.textContent = email;
-    });
   }
 
   function setCurrentYear() {
@@ -50,7 +39,6 @@
     });
   }
 
-  mountTallyForm();
-  configureStoryLinks();
+  mountTallyForms();
   setCurrentYear();
 })();

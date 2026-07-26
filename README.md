@@ -6,12 +6,13 @@ The site supports a world-class indoor track in Summerhill while making the case
 
 ## Routes
 
-- `/` — Home and Add Your Voice form mount
+- `/` — Home
 - `/history/` — Our History
 - `/ownership/` — A Better Ownership Model
 - `/public-value/` — What Is the Deal Worth?
 - `/the-ask/` — The Ask
 - `/next-step/` — Community Partnership Agreement
+- `/petition/` — Petition and Tally signature form
 - `/stories/` — Share Your Story
 
 ## Stack
@@ -48,20 +49,21 @@ Edit `assets/js/config.js`:
 
 ```js
 window.OUR_CHENEY_CONFIG = {
-  tallyFormId: "YOUR_FINAL_TALLY_FORM_ID",
-  storyEmail: "stories@yourdomain.org"
+  tallyFormId: "YOUR_PETITION_FORM_ID",
+  storiesTallyFormId: "YOUR_STORIES_FORM_ID"
 };
 ```
 
 ### Tally and Airtable
 
-The home page already contains the responsive form mount and all Add Your Voice buttons point to it.
+The Petition and Stories pages contain responsive Tally form mounts.
 
-1. Build the final Tally form with the fields listed in `prompts/8.forms.md`.
-2. Connect Tally to Airtable from Tally's private integration settings.
-3. Put only the Tally form ID in `assets/js/config.js`.
-4. Submit test responses on mobile and desktop.
-5. Confirm the success message: “Thank you. Your voice is now part of this effort.”
+1. Configure the petition form with full name, email address, phone number, street address, resident or stakeholder status, a petition-agreement checkbox, and typed signature fields.
+2. Configure the story form with name, email address, phone number, experience, and photograph-upload fields.
+3. Connect Tally to Airtable from Tally's private integration settings.
+4. Put only the Tally form IDs in `assets/js/config.js`.
+5. Submit test responses on mobile and desktop.
+6. Confirm an appropriate success message for each form.
 
 Never add Airtable API keys, base IDs, private response data, or other credentials to this repository.
 
@@ -87,7 +89,6 @@ Documentary images are stored as optimized WebP files, with attribution included
 - Replace the 2013 home-page image with a strong current Summerhill photograph.
 - Add dated resident photographs of gates, fencing, fields, access points, and maintenance conditions.
 - Confirm the Tally form ID, privacy settings, success message, and private Airtable integration.
-- Replace the placeholder story email.
 - Run keyboard, screen-reader, contrast, mobile, and reduced-motion checks.
 - Verify DNS, the custom domain, and HTTPS.
 

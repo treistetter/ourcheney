@@ -404,11 +404,7 @@ p:last-child {
 }
 
 .locked-section {
-  background:
-    linear-gradient(90deg, rgba(13, 48, 56, 0.045) 1px, transparent 1px),
-    linear-gradient(rgba(13, 48, 56, 0.045) 1px, transparent 1px),
-    var(--oc-paper);
-  background-size: 3.5rem 3.5rem;
+  background: #d83d27;
   border-bottom: 1px solid var(--oc-line);
   border-top: 1px solid var(--oc-line);
 }
@@ -529,7 +525,19 @@ p:last-child {
 
 .locked-section h2 a:hover {
   color: inherit;
-  text-decoration-color: var(--oc-red);
+  text-decoration-color: var(--oc-gold);
+}
+
+.locked-copy {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.locked-copy h2 {
+  color: var(--oc-white);
+}
+
+.locked-copy .eyebrow {
+  color: var(--oc-gold);
 }
 
 .card-kicker,
@@ -549,8 +557,7 @@ p:last-child {
 .access-visual {
   background:
     linear-gradient(115deg, transparent 0 42%, rgba(255, 255, 255, 0.18) 42% 43%, transparent 43% 57%, rgba(255, 255, 255, 0.18) 57% 58%, transparent 58%),
-    repeating-linear-gradient(90deg, transparent 0 3rem, rgba(255, 255, 255, 0.17) 3rem 3.12rem),
-    var(--oc-navy);
+    repeating-linear-gradient(90deg, transparent 0 3rem, rgba(255, 255, 255, 0.17) 3rem 3.12rem);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -649,6 +656,66 @@ p:last-child {
   right: -9rem;
   top: -12rem;
   width: 28rem;
+}
+
+.petition-hero {
+  padding-block: clamp(2rem, 4vw, 3rem);
+}
+
+.petition-hero h1 {
+  font-size: clamp(2.75rem, 5vw, 4.25rem);
+}
+
+.petition-summary {
+  display: grid;
+  gap: 1rem 2rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  list-style: none;
+  margin: 1.5rem 0 0;
+  max-width: 67rem;
+  padding: 0;
+}
+
+.petition-summary li {
+  font-weight: 700;
+  line-height: 1.45;
+  padding-left: 1.15rem;
+  position: relative;
+}
+
+.petition-summary li::before {
+  color: var(--oc-gold);
+  content: "•";
+  font-size: 1.35rem;
+  left: 0;
+  line-height: 1;
+  position: absolute;
+  top: 0.12rem;
+}
+
+.petition-form-section {
+  padding-block: clamp(1.25rem, 3vw, 2.5rem);
+  scroll-margin-top: 5rem;
+}
+
+.stories-hero {
+  padding-block: clamp(3rem, 6vw, 5rem);
+}
+
+.stories-hero h1 {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+}
+
+.stories-hero .lede {
+  max-width: 52rem;
+}
+
+.stories-form-section {
+  padding-block: clamp(3rem, 6vw, 5rem);
+}
+
+.stories-form-section h2 {
+  font-size: clamp(2.25rem, 4vw, 3.75rem);
 }
 
 .history-section {
@@ -1087,6 +1154,11 @@ p:last-child {
   .home-hero .eyebrow,
   .home-hero .hero-media {
     display: none;
+  }
+
+  .petition-summary {
+    gap: 0.55rem;
+    grid-template-columns: 1fr;
   }
 }
 
