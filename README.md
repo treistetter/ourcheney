@@ -10,6 +10,7 @@ The site brings together neighborhood history, public-value context, project-sca
 - `/park/` — Our Park and public-access context
 - `/history/` — Our History
 - `/public-value/` — Public Value
+- `/connect/` — Connect with Us form
 
 ## Stack
 
@@ -69,4 +70,4 @@ Documentary images are stored locally in optimized web formats.
 
 ## Privacy
 
-The site contains no forms, advertising trackers, or analytics scripts and does not collect visitor information.
+The feedback page embeds a form hosted by Tally. The site contains no advertising trackers or analytics scripts.
