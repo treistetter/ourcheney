@@ -506,15 +506,15 @@ p:last-child {
   width: 28rem;
 }
 
-.stories-hero {
+.park-hero {
   padding-block: clamp(3rem, 6vw, 5rem);
 }
 
-.stories-hero h1 {
+.park-hero h1 {
   font-size: clamp(3rem, 7vw, 5.5rem);
 }
 
-.stories-hero .lede {
+.park-hero .lede {
   max-width: 52rem;
 }
 

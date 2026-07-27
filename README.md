@@ -7,9 +7,9 @@ The site brings together neighborhood history, public-value context, project-sca
 ## Routes
 
 - `/` — Home
+- `/park/` — Our Park and public-access context
 - `/history/` — Our History
 - `/public-value/` — Public Value
-- `/stories/` — Our Park and public-access context
 
 ## Stack
 
