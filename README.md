@@ -71,4 +71,4 @@ Documentary images are stored locally in optimized web formats.
 
 ## Privacy
 
-The feedback page embeds a form hosted by Tally. The site contains no advertising trackers or analytics scripts.
+The Connect page embeds a form hosted by Tally. The site contains no advertising trackers or analytics scripts.
