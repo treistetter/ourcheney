@@ -8,12 +8,12 @@
     <link rel="canonical" href="https://ourcheney.org/">
     <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/site.css?v=20260727-26">
+    <link rel="stylesheet" href="assets/css/site.css?v=20260730-34">
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <nav class="navbar navbar-expand-xl site-nav sticky-top" aria-label="Main navigation">
+    <nav class="navbar navbar-expand-xxl site-nav sticky-top" aria-label="Main navigation">
       <div class="container">
         <a class="navbar-brand" href="./" aria-label="Our Cheney home">
           <span class="brand-mark" aria-hidden="true">OC</span>
@@ -23,12 +23,14 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="siteNav">
-          <ul class="navbar-nav ms-auto align-items-xl-center">
+          <ul class="navbar-nav ms-auto align-items-xxl-center">
             <li class="nav-item"><a class="nav-link active" aria-current="page" href="./">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="mission/">Mission</a></li>
-            <li class="nav-item"><a class="nav-link" href="park/">Our Park</a></li>
+            <li class="nav-item"><a class="nav-link" href="feedback/">Community Feedback</a></li>
             <li class="nav-item"><a class="nav-link" href="history/">History</a></li>
-            <li class="nav-item"><a class="nav-link" href="public-value/">Public Value</a></li>
+            <li class="nav-item"><a class="nav-link" href="park/">Our Park</a></li>
+            <li class="nav-item"><a class="nav-link" href="requests/">Requests</a></li>
+            <li class="nav-item"><a class="nav-link" href="records/">Open Records</a></li>
             <li class="nav-item"><a class="nav-link" href="connect/">Connect</a></li>
           </ul>
         </div>
@@ -36,20 +38,20 @@
     </nav>
 
     <main id="main-content">
-      <header class="home-hero">
+      <header class="home-hero" id="mission" aria-labelledby="mission-home-title">
         <div class="container-fluid px-0">
           <div class="row g-0">
             <div class="col-xl-7">
               <div class="hero-copy ps-3 ps-sm-4 ps-xl-5 pe-3">
                 <div class="ms-xl-auto" style="max-width: 760px;">
-                  <p class="eyebrow eyebrow-light">Cheney Stadium and Summerhill’s public land</p>
-                  <h1>Cheney: A Public Park</h1>
-                  <p class="lead mt-4">
-                    Atlanta Track Club has proposed an indoor track facility at Cheney Park on public land in Summerhill. This park has been at the heart of the neighborhood for decades. To transfer widely used public land for a private organization’s headquarters without community input is a risk to all of us who depend on public parks.</p>
+                  <p class="eyebrow eyebrow-light">Mission</p>
+                  <h1 id="mission-home-title">Cheney: A Public Park</h1>
+                  <p class="lead mt-4">Atlanta Track Club has proposed an indoor track facility at Cheney Park on public land in Summerhill. Our Cheney believes that long-term decisions regarding widely used public land should include meaningful community input.
+                  </p>
                   <p class="lead">
                     Our Cheney has one simple goal: deliver public value for public land. We are excited about the possibility of this first-of-its-kind facility. We are going to help make it happen and make it work for all of us.
                   </p>
-                  <a class="btn btn-primary mt-4" href="connect/">Connect with Us</a>
+                  <a class="btn btn-primary mt-4" href="mission/">Read Our Mission</a>
                 </div>
               </div>
             </div>
@@ -62,61 +64,89 @@
         </div>
       </header>
 
-      <section class="section-pad locked-section" aria-labelledby="park-home-title">
+      <section class="section-pad home-feedback-section" id="community-feedback" aria-labelledby="feedback-home-title">
+        <div class="container">
+          <div class="row g-5 align-items-end">
+            <div class="col-lg-6 order-2 order-lg-1">
+              <p class="lede mt-4">The community is sharing what they value, what concerns them, and what they want decision-makers to consider.</p>
+              <div class="d-flex flex-wrap gap-3 mt-4">
+                <a class="btn btn-primary" href="feedback/#community-responses">Read the Feedback</a>
+                <a class="btn btn-outline-dark" href="feedback/#add-your-voice">Add Your Voice</a>
+              </div>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2">
+              <p class="eyebrow">Community Feedback</p>
+              <h2 id="feedback-home-title">Public land.<br>Public decision.</h2>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-pad bg-navy home-history-section" id="history" aria-labelledby="history-home-title">
+        <div class="container">
+          <div class="row g-5 align-items-end">
+            <div class="col-lg-7">
+              <p class="eyebrow eyebrow-light">History</p>
+              <h2 id="history-home-title">Summerhill's History Calls for Input</h2>
+            </div>
+            <div class="col-lg-5">
+              <p>Highway construction, stadium development, the Olympics, and later redevelopment have repeatedly reshaped Summerhill’s streets, homes, businesses, and public spaces.</p>
+              <a class="btn btn-light mt-3" href="history/">Explore the History</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-pad home-requests-section" id="requests" aria-labelledby="requests-home-title">
+        <div class="container">
+          <div class="row g-5 align-items-end">
+            <div class="col-lg-6">
+              <p class="eyebrow">Requests</p>
+              <h2 id="requests-home-title">Questions that need public answers.</h2>
+            </div>
+            <div class="col-lg-6">
+              <p class="lede mt-4">The proposal raises practical questions about public-school access, day-to-day operations, major events, land value, and watershed impacts.</p>
+              <a class="btn btn-primary mt-4" href="requests/">See All Requests</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-pad locked-section" id="our-park" aria-labelledby="park-home-title">
         <div class="container">
           <div class="row g-3 align-items-stretch">
+            <div class="col-lg-6">
+              <div class="locked-copy p-4 p-md-5 h-100 d-flex flex-column justify-content-center">
+                <p class="eyebrow">Our Park</p>
+                <h2 id="park-home-title"><a href="park/">Our Park</a></h2>
+                <p>Today, Phoenix II Park and the fields at Cheney provide space for sports, recreation, walking, and community gatherings. Together, they form an important part of Summerhill’s shared outdoor space.
+                </p>
+                <a class="btn btn-light mt-3 align-self-start" href="park/">See the Park</a>
+              </div>
+            </div>
             <div class="col-lg-6">
               <figure class="our-park-visual h-100 mb-0">
                 <img src="assets/images/our_park.png" alt="Illustration of the community vision for Phoenix II and Cheney Stadium as connected parkland" loading="lazy" width="580" height="653">
               </figure>
             </div>
-            <div class="col-lg-6">
-              <div class="locked-copy p-4 p-md-5 h-100 d-flex flex-column justify-content-center">
-                <p class="eyebrow">The community’s vision</p>
-                <h2 id="park-home-title"><a href="park/">Our Park</a></h2>
-                <p>Summerhill residents have envisioned Phoenix II and Cheney Stadium as one connected public park, with sports fields, play areas, walking paths, water features, and places to gather. Since at least 2015, we have been working to make it happen but have been blocked at every turn.</p>
-                <a class="btn btn-light mt-3 align-self-start" href="park/">See the Vision</a>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
-      <section class="section-pad bg-navy">
-        <div class="container">
+
+      <section class="section-pad home-records-section" id="open-records" aria-labelledby="records-home-title">
+        <div class="container position-relative">
           <div class="row g-5 align-items-end">
-            <div class="col-lg-7">
-              <p class="eyebrow eyebrow-light">Neighborhood context</p>
-              <h2>Summerhill’s development history.</h2>
-            </div>
-            <div class="col-lg-5">
-              <p>Highway construction, stadium development, the Olympics, and later redevelopment have repeatedly reshaped Summerhill’s streets, homes, businesses, and public spaces.</p>
-              <p><a class="text-white" href="history/">Explore the neighborhood history</a>.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-pad home-value-section" aria-labelledby="value-home-title">
-        <div class="container">
-          <div class="row g-5 align-items-center">
             <div class="col-lg-6">
-              <div class="home-value-stat">
-                <span class="status-pill mb-4">Valuable Public Asset</span>
-                <div class="stat">$30M</div>
-                <p class="stat-label mt-3">A large publicly owned lot in the center of Summerhill</p>
-              </div>
+              <p class="eyebrow eyebrow-light">Open Records</p>
+              <h2 id="records-home-title">Public documents belong in public view.</h2>
             </div>
-            <div class="col-lg-5 offset-lg-1 value-copy">
-              <p class="eyebrow">Land value context</p>
-              <h2 id="value-home-title">Public Value</h2>
-              <p>Cheney Park is at the heart of a thriving community in Summerhill. Based on recent comparable sales, the land for the indoor track alone is conservatively worth $30 million. The value of the entire complex pushes it much higher. It is a large amount of land and a significant public asset.</p>
-              <p><a href="public-value/">Review the public value overview</a>.</p>
+            <div class="col-lg-6">
+              <p class="lede text-white mt-4">Our Cheney has filed records requests with public agencies and organizations connected to the proposal. We will publish the documents and response status as they become available.</p>
+              <a class="btn btn-light mt-4" href="records/">View Open Records</a>
             </div>
           </div>
         </div>
       </section>
-
 
     </main>
 
@@ -131,9 +161,11 @@
             <p class="text-white fw-bold mb-2">Explore</p>
             <ul class="list-unstyled">
               <li><a href="mission/">Mission</a></li>
-              <li><a href="park/">Our Park</a></li>
+              <li><a href="feedback/">Community Feedback</a></li>
               <li><a href="history/">Our History</a></li>
-              <li><a href="public-value/">Public Value</a></li>
+              <li><a href="park/">Our Park</a></li>
+              <li><a href="requests/">Public Requests</a></li>
+              <li><a href="records/">Open Records</a></li>
               <li><a href="connect/">Connect</a></li>
             </ul>
           </div>

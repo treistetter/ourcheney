@@ -10,8 +10,21 @@ The site brings together neighborhood history, public-value context, project-sca
 - `/mission/` — Mission
 - `/park/` — Our Park and public-access context
 - `/history/` — Our History
-- `/public-value/` — Public Value
-- `/connect/` — Connect with Us form
+- `/requests/` — Public Requests about proposed track operations
+- `/requests/aps/` — APS Access to the Indoor Track
+- `/requests/usage/` — Low-, Mid-, and High-Season Weekly Usage Schedules
+- `/requests/calendar/` — Annual Calendar of Events
+- `/requests/economics/` — Economic value and measurable public benefits
+- `/requests/watershed/` — Watershed Review of the Proposed Cheney Indoor Track
+- `/records/` — Open Records request index and response status
+- `/records/gsu/` — Georgia State University open records request
+- `/records/ghsa/` — Georgia High School Association open records request
+- `/records/zoning/` — City of Atlanta zoning open records request
+- `/records/watershed/` — City of Atlanta watershed open records request
+- `/records/aps/` — Atlanta Public Schools open records request
+- `/records/atldot/` — Atlanta Department of Transportation open records request
+- `/feedback/` — Public community feedback and Add Your Voice form
+- `/connect/` — Community updates and ways to get involved
 
 ## Stack
 
@@ -71,4 +84,4 @@ Documentary images are stored locally in optimized web formats.
 
 ## Privacy
 
-The Connect page embeds a form hosted by Tally. The site contains no advertising trackers or analytics scripts.
+The Community Feedback page publishes anonymous community comments and embeds an Add Your Voice form hosted by Tally. The Connect page embeds a separate updates and involvement form hosted by Tally. The site contains no advertising trackers or analytics scripts.
