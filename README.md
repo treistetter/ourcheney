@@ -25,6 +25,8 @@ The site brings together neighborhood history, public-value context, project-sca
 - `/records/zoning/` — City of Atlanta zoning open records request
 - `/records/watershed/` — City of Atlanta watershed open records request
 - `/records/aps/` — Atlanta Public Schools open records request
+- `/records/aps2/` — Atlanta Public Schools email open records request
+- `/records/aps3/` — Atlanta Public Schools project records request
 - `/records/atldot/` — Atlanta Department of Transportation open records request
 - `/feedback/` — Public community feedback and Add Your Voice form
 - `/connect/` — Community updates and ways to get involved
