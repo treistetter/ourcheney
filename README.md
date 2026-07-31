@@ -16,6 +16,9 @@ The site brings together neighborhood history, public-value context, project-sca
 - `/requests/calendar/` — Annual Calendar of Events
 - `/requests/economics/` — Economic value and measurable public benefits
 - `/requests/watershed/` — Watershed Review of the Proposed Cheney Indoor Track
+- `/commentary/` — Commentary and analysis index
+- `/commentary/finances/` — Analysis of the proposed 50-year ground lease
+- `/commentary/deal/` — Commentary on the proposed agreement and its unanswered questions
 - `/records/` — Open Records request index and response status
 - `/records/gsu/` — Georgia State University open records request
 - `/records/ghsa/` — Georgia High School Association open records request
