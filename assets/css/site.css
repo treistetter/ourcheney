@@ -1219,6 +1219,12 @@ p:last-child {
   grid-column: span 8;
 }
 
+.feedback-card-full {
+  grid-column: 1 / -1;
+  min-height: auto;
+  text-align: center;
+}
+
 .feedback-card blockquote {
   margin: 0;
 }
