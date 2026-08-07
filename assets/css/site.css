@@ -1185,6 +1185,15 @@ p:last-child {
   text-transform: uppercase;
 }
 
+.feedback-integrity-note {
+  border-left: 0.2rem solid var(--oc-sage);
+  color: var(--oc-ink-soft);
+  font-size: 0.98rem;
+  margin: -1.25rem 0 2.5rem;
+  max-width: 52rem;
+  padding: 0.15rem 0 0.15rem 1rem;
+}
+
 .feedback-grid {
   display: grid;
   gap: 1.35rem;
@@ -1192,15 +1201,29 @@ p:last-child {
 }
 
 .feedback-card {
-  background: var(--oc-white);
+  --feedback-card-background: var(--oc-white);
+  --feedback-preview-height: 22rem;
+  background: var(--feedback-card-background);
   border: 1px solid var(--oc-line);
-  box-shadow: 0 12px 30px rgba(8, 34, 41, 0.07);
+  box-shadow: 0 10px 26px rgba(8, 34, 41, 0.055);
   display: flex;
   flex-direction: column;
   grid-column: span 6;
   min-height: 100%;
   padding: clamp(1.6rem, 3.5vw, 2.6rem);
   position: relative;
+}
+
+.feedback-card:nth-child(6n + 1) {
+  --feedback-card-background: #f3f6f0;
+}
+
+.feedback-card:nth-child(6n + 3) {
+  --feedback-card-background: #faf5ec;
+}
+
+.feedback-card:nth-child(6n + 5) {
+  --feedback-card-background: #f1f5f6;
 }
 
 .feedback-card-wide {
@@ -1229,11 +1252,31 @@ p:last-child {
   margin: 0;
 }
 
+.feedback-quote-preview {
+  position: relative;
+}
+
+.feedback-card.is-collapsed .feedback-quote-preview {
+  max-height: var(--feedback-preview-height);
+  overflow: hidden;
+}
+
+.feedback-card.is-collapsed .feedback-quote-preview::after {
+  background: linear-gradient(180deg, transparent, var(--feedback-card-background) 88%);
+  bottom: 0;
+  content: "";
+  height: 5rem;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+}
+
 .feedback-card blockquote p {
   color: var(--oc-navy);
   font-family: var(--oc-serif);
-  font-size: clamp(1.25rem, 2.15vw, 1.65rem);
-  font-weight: 700;
+  font-size: clamp(1.25rem, 2vw, 1.55rem);
+  font-weight: 600;
   letter-spacing: -0.018em;
   line-height: 1.42;
 }
@@ -1242,33 +1285,48 @@ p:last-child {
   margin-top: 1.25rem;
 }
 
-.feedback-card-emphasis {
-  background: var(--oc-red);
-  border-color: var(--oc-red);
+.feedback-card-actions {
+  display: flex;
+  margin-top: auto;
+  padding-top: 1.35rem;
+  position: relative;
+  z-index: 1;
 }
 
-.feedback-card-emphasis blockquote p {
-  color: #fff;
+.feedback-card-actions[hidden] {
+  display: none;
 }
 
-.feedback-card-feature {
-  background: var(--oc-paper);
-  border-top: 0.45rem solid var(--oc-sage);
-  box-shadow: none;
-  grid-column: 1 / -1;
-  margin-top: 0.25rem;
-  padding: clamp(2rem, 5vw, 4rem);
+.feedback-card-full .feedback-card-actions {
+  justify-content: center;
 }
 
-.feedback-card-feature blockquote {
-  column-count: 2;
-  column-gap: clamp(2rem, 5vw, 4.5rem);
+.feedback-read-more {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid currentColor;
+  color: var(--oc-red-dark);
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0;
+  text-transform: uppercase;
 }
 
-.feedback-card-feature blockquote p {
-  break-inside: avoid;
-  font-size: clamp(1.25rem, 2vw, 1.55rem);
-  font-weight: 400;
+.feedback-read-more::after {
+  content: "↓";
+  display: inline-block;
+  margin-left: 0.45rem;
+}
+
+.feedback-card.is-expanded .feedback-read-more::after {
+  content: "↑";
+}
+
+.feedback-read-more:hover {
+  color: var(--oc-red);
 }
 
 .feedback-submit {
@@ -2003,10 +2061,6 @@ p:last-child {
     grid-column: span 6;
   }
 
-  .feedback-card-feature {
-    grid-column: 1 / -1;
-  }
-
   .feedback-submit-copy {
     position: static;
   }
@@ -2077,13 +2131,8 @@ p:last-child {
   .feedback-card-wide,
   .feedback-card-narrow,
   .feedback-card-compact,
-  .feedback-card-expanded,
-  .feedback-card-feature {
+  .feedback-card-expanded {
     grid-column: 1 / -1;
-  }
-
-  .feedback-card-feature blockquote {
-    column-count: 1;
   }
 
   .home-hero .hero-media {
