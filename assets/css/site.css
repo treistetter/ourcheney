@@ -1975,6 +1975,218 @@ p:last-child {
   margin-top: 1rem;
 }
 
+.project-hero {
+  background:
+    radial-gradient(circle at 80% 20%, rgba(239, 184, 61, 0.12), transparent 22rem),
+    var(--oc-navy);
+  color: rgba(255, 255, 255, 0.86);
+  overflow: hidden;
+  padding-block: clamp(4.5rem, 9vw, 8rem) clamp(10rem, 18vw, 15rem);
+  position: relative;
+}
+
+.project-hero::after {
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  border-radius: 50%;
+  content: "";
+  height: 36rem;
+  left: -15rem;
+  position: absolute;
+  top: -22rem;
+  width: 36rem;
+}
+
+.project-hero-copy {
+  margin-inline: auto;
+  max-width: 850px;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+
+.project-hero .eyebrow {
+  justify-content: center;
+}
+
+.project-hero h1 {
+  color: var(--oc-white);
+}
+
+.project-hero .lede {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  line-height: 1.55;
+  margin: 1.5rem auto 0;
+  max-width: 720px;
+}
+
+.project-map-section {
+  background:
+    linear-gradient(90deg, rgba(22, 45, 51, 0.035) 1px, transparent 1px),
+    var(--oc-paper);
+  background-size: 4rem 100%;
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.project-map {
+  margin: clamp(-10rem, -12vw, -7rem) auto 0;
+  max-width: 900px;
+  position: relative;
+  z-index: 3;
+}
+
+.project-map-frame {
+  background: var(--oc-white);
+  box-shadow: 0 28px 65px rgba(8, 34, 41, 0.24);
+  padding: clamp(0.4rem, 1vw, 0.75rem);
+}
+
+.project-map img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.project-map figcaption {
+  color: var(--oc-ink-soft);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  margin: 1.25rem auto 0;
+  max-width: 720px;
+  text-align: center;
+}
+
+.project-overview-copy {
+  margin-inline: auto;
+  max-width: 830px;
+  text-align: center;
+}
+
+.project-overview-copy .eyebrow {
+  justify-content: center;
+}
+
+.project-overview-copy h2 {
+  font-size: clamp(2.4rem, 5vw, 4.35rem);
+  margin-bottom: 1.75rem;
+}
+
+.project-overview-copy p {
+  color: var(--oc-ink-soft);
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  line-height: 1.72;
+}
+
+.project-facts {
+  background: var(--oc-white);
+  border: 1px solid var(--oc-line);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: clamp(3rem, 7vw, 5.5rem) 0 0;
+}
+
+.project-fact {
+  margin: 0;
+  min-width: 0;
+  padding: clamp(1.5rem, 3vw, 2.4rem);
+}
+
+.project-fact + .project-fact {
+  border-left: 1px solid var(--oc-line);
+}
+
+.project-fact dt {
+  color: var(--oc-red-dark);
+  font-size: 0.67rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.9rem;
+  text-transform: uppercase;
+}
+
+.project-fact dd {
+  color: var(--oc-navy);
+  font-family: var(--oc-serif);
+  font-size: clamp(2rem, 3.7vw, 3.25rem);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+  margin: 0;
+}
+
+.project-fact dd span {
+  color: var(--oc-ink-soft);
+  display: block;
+  font-family: var(--oc-sans);
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-top: 0.7rem;
+}
+
+.project-analysis-heading {
+  max-width: 760px;
+}
+
+.project-analysis-heading h2 {
+  font-size: clamp(2.4rem, 5vw, 4.1rem);
+  margin-bottom: 1.25rem;
+}
+
+.project-analysis-heading > p:last-child {
+  color: var(--oc-ink-soft);
+  font-size: 1.12rem;
+}
+
+.project-analysis-grid {
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 2rem);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.project-analysis-card {
+  background: var(--oc-white);
+  border: 1px solid var(--oc-line);
+  border-top: 0.42rem solid var(--oc-red);
+  box-shadow: 0 14px 34px rgba(8, 34, 41, 0.08);
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.75rem, 4vw, 3rem);
+}
+
+.project-analysis-card-finances {
+  border-top-color: var(--oc-gold);
+}
+
+.project-analysis-card h3 {
+  font-size: clamp(1.8rem, 3.5vw, 2.7rem);
+  margin-bottom: 1.25rem;
+}
+
+.project-analysis-card > p:not(.card-kicker) {
+  color: var(--oc-ink-soft);
+  line-height: 1.68;
+}
+
+.project-analysis-link {
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.045em;
+  margin-top: auto;
+  padding-top: 1.5rem;
+  text-transform: uppercase;
+}
+
+.project-source-note {
+  border-top: 1px solid var(--oc-line);
+  color: var(--oc-ink-soft);
+  font-size: 0.8rem;
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding-top: 1.25rem;
+}
+
 .site-footer {
   background: var(--oc-navy-deep);
   color: rgba(255, 255, 255, 0.7);
@@ -2026,6 +2238,18 @@ p:last-child {
 }
 
 @media (max-width: 991.98px) {
+  .project-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-fact:nth-child(3) {
+    border-left: 0;
+  }
+
+  .project-fact:nth-child(n + 3) {
+    border-top: 1px solid var(--oc-line);
+  }
+
   .deal-fact-row,
   .deal-fact-row:nth-child(even) {
     display: block;
@@ -2119,6 +2343,10 @@ p:last-child {
 }
 
 @media (max-width: 767.98px) {
+  .project-analysis-grid {
+    grid-template-columns: 1fr;
+  }
+
   .finances-metrics {
     grid-template-columns: 1fr;
   }
@@ -2151,6 +2379,23 @@ p:last-child {
 
   .hero-media {
     min-height: 23rem;
+  }
+
+  .project-hero {
+    padding-bottom: 8.5rem;
+  }
+
+  .project-map {
+    margin-top: -6.5rem;
+  }
+
+  .project-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .project-fact + .project-fact {
+    border-left: 0;
+    border-top: 1px solid var(--oc-line);
   }
 
   .analysis-formula {

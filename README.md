@@ -10,6 +10,7 @@ The site brings together neighborhood history, public-value context, project-sca
 - `/mission/` — Mission
 - `/park/` — Our Park and public-access context
 - `/history/` — Our History
+- `/project/` — Concise overview of the proposed indoor track project
 - `/requests/` — Public Requests about proposed track operations
 - `/requests/aps/` — APS Access to the Indoor Track
 - `/requests/usage/` — Low-, Mid-, and High-Season Weekly Usage Schedules
