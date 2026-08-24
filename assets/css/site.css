@@ -2035,6 +2035,118 @@ p:last-child {
   margin-top: 1rem;
 }
 
+.city-efforts-hero {
+  align-items: flex-end;
+  color: var(--oc-white);
+  display: flex;
+  min-height: clamp(32rem, 68vw, 49rem);
+  overflow: hidden;
+  position: relative;
+}
+
+.city-efforts-hero-image,
+.city-efforts-hero-shade {
+  height: 100%;
+  inset: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.city-efforts-hero-image {
+  object-fit: cover;
+  object-position: center center;
+}
+
+.city-efforts-hero-shade {
+  background:
+    linear-gradient(180deg, rgba(8, 34, 41, 0.15) 0%, rgba(8, 34, 41, 0.08) 30%, rgba(8, 34, 41, 0.92) 100%),
+    linear-gradient(90deg, rgba(8, 34, 41, 0.58), transparent 65%);
+}
+
+.city-efforts-hero-content {
+  padding-bottom: clamp(2.5rem, 7vw, 5.5rem);
+  position: relative;
+  z-index: 1;
+}
+
+.city-efforts-hero h1 {
+  color: var(--oc-white);
+  font-size: clamp(3.8rem, 10vw, 7.75rem);
+  text-shadow: 0 0.12em 0.35em rgba(0, 0, 0, 0.3);
+}
+
+.city-efforts-hero .lede {
+  color: rgba(255, 255, 255, 0.94);
+  font-family: var(--oc-serif);
+  font-size: clamp(1.25rem, 2.7vw, 1.9rem);
+  font-weight: 700;
+  line-height: 1.4;
+  max-width: 48rem;
+  text-shadow: 0 0.08em 0.3em rgba(0, 0, 0, 0.55);
+}
+
+.city-efforts-article {
+  background:
+    linear-gradient(90deg, rgba(200, 69, 45, 0.045) 1px, transparent 1px),
+    var(--oc-white);
+  background-size: 4rem 100%;
+}
+
+.city-efforts-copy {
+  margin-inline: auto;
+  max-width: 850px;
+}
+
+.city-efforts-copy p {
+  color: var(--oc-ink);
+  font-family: var(--oc-serif);
+  font-size: clamp(1.08rem, 1.5vw, 1.22rem);
+  line-height: 1.78;
+}
+
+.city-efforts-copy p + p {
+  margin-top: 2rem;
+}
+
+.city-efforts-copy .city-efforts-opening {
+  color: var(--oc-navy);
+  font-size: clamp(1.32rem, 2.4vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: -0.018em;
+  line-height: 1.55;
+}
+
+.city-efforts-copy a {
+  font-weight: 800;
+  text-decoration-color: var(--oc-red);
+}
+
+.city-efforts-figure {
+  background: var(--oc-navy);
+  box-shadow: var(--oc-shadow);
+  margin: clamp(2.5rem, 6vw, 4.5rem) auto;
+  max-width: 1040px;
+}
+
+.city-efforts-figure img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.city-efforts-figure figcaption {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  padding: 0.9rem 1.1rem;
+}
+
+.city-efforts-figure-plan {
+  max-width: 760px;
+}
+
 .project-hero {
   background:
     radial-gradient(circle at 80% 20%, rgba(239, 184, 61, 0.12), transparent 22rem),
@@ -2373,6 +2485,22 @@ p:last-child {
 }
 
 @media (max-width: 575.98px) {
+  .city-efforts-hero {
+    min-height: 32rem;
+  }
+
+  .city-efforts-hero-image {
+    object-position: 56% center;
+  }
+
+  .city-efforts-figure {
+    margin-inline: -0.75rem;
+  }
+
+  .city-efforts-figure-plan {
+    margin-inline: auto;
+  }
+
   .records-summary {
     grid-template-columns: 1fr;
   }

@@ -19,12 +19,13 @@ The site brings together neighborhood history, public-value context, project-sca
 - `/requests/economics/` — Economic value and measurable public benefits
 - `/requests/watershed/` — Watershed Review of the Proposed Cheney Indoor Track
 - `/commentary/` — Commentary and analysis index
+- `/commentary/city-efforts/` — Commentary on Atlanta Track Club's earlier search for public land
 - `/commentary/finances/` — Analysis of the proposed 50-year ground lease
 - `/commentary/deal/` — Commentary on the proposed agreement and its unanswered questions
 - `/records/` — Open Records request index and response status
 - `/records/gsu/` — Georgia State University open records request
 - `/records/ghsa/` — Georgia High School Association open records request
-- `/records/zoning/` — City of Atlanta zoning open records request
+- `/records/coa/` — Completed City of Atlanta open records request and responsive documents
 - `/records/watershed/` — City of Atlanta watershed open records request
 - `/records/aps/` — Atlanta Public Schools open records request
 - `/records/aps2/` — Atlanta Public Schools email open records request
