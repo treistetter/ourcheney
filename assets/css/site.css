@@ -2147,6 +2147,99 @@ p:last-child {
   max-width: 760px;
 }
 
+.community-engagement-copy {
+  margin-inline: auto;
+  max-width: 850px;
+}
+
+.community-engagement-copy h2 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  margin-bottom: 1.5rem;
+  margin-top: clamp(4rem, 8vw, 6rem);
+}
+
+.community-engagement-copy h2:first-child {
+  margin-top: 0;
+}
+
+.community-engagement-copy p {
+  color: var(--oc-ink);
+  font-family: var(--oc-serif);
+  font-size: clamp(1.08rem, 1.5vw, 1.22rem);
+  line-height: 1.78;
+}
+
+.community-engagement-copy p + p {
+  margin-top: 1.5rem;
+}
+
+.community-engagement-copy .community-engagement-opening {
+  color: var(--oc-navy);
+  font-size: clamp(1.32rem, 2.4vw, 1.8rem);
+  font-weight: 700;
+  letter-spacing: -0.018em;
+  line-height: 1.55;
+}
+
+.community-engagement-poll {
+  margin: clamp(2.5rem, 6vw, 4.5rem) auto;
+  max-width: 1120px;
+}
+
+.community-engagement-poll img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.community-engagement-poll figcaption {
+  color: var(--oc-ink-soft);
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.55;
+  padding-top: 0.75rem;
+}
+
+.community-engagement-quote {
+  border-left: 0.3rem solid var(--oc-gold);
+  color: var(--oc-ink-soft);
+  margin: clamp(2.5rem, 6vw, 4rem) auto;
+  max-width: 900px;
+  padding: 0.25rem 0 0.25rem clamp(1.25rem, 3vw, 2rem);
+}
+
+.community-engagement-quote p {
+  color: var(--oc-navy);
+  font-family: var(--oc-serif);
+  font-size: clamp(1.08rem, 1.5vw, 1.22rem);
+  font-weight: 500;
+  letter-spacing: normal;
+  line-height: 1.68;
+}
+
+.community-engagement-quote p + p {
+  margin-top: 1.5rem;
+}
+
+.community-engagement-quote footer {
+  border-top: 1px solid var(--oc-line);
+  color: var(--oc-ink-soft);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.05em;
+  margin-top: 1.25rem;
+  padding-top: 0.8rem;
+  text-transform: uppercase;
+}
+
+.community-engagement-quote cite {
+  font-style: italic;
+}
+
+.community-engagement-quote a {
+  font-weight: 850;
+}
+
 .project-hero {
   background:
     radial-gradient(circle at 80% 20%, rgba(239, 184, 61, 0.12), transparent 22rem),
@@ -2485,6 +2578,11 @@ p:last-child {
 }
 
 @media (max-width: 575.98px) {
+  .community-engagement-poll,
+  .community-engagement-quote {
+    margin-inline: -0.75rem;
+  }
+
   .city-efforts-hero {
     min-height: 32rem;
   }

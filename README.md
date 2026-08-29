@@ -19,6 +19,7 @@ The site brings together neighborhood history, public-value context, project-sca
 - `/requests/economics/` — Economic value and measurable public benefits
 - `/requests/watershed/` — Watershed Review of the Proposed Cheney Indoor Track
 - `/commentary/` — Commentary and analysis index
+- `/commentary/community-engagement/` — Commentary on the August 12 feedback report and Summerhill poll results
 - `/commentary/city-efforts/` — Commentary on Atlanta Track Club's earlier search for public land
 - `/commentary/finances/` — Analysis of the proposed 50-year ground lease
 - `/commentary/deal/` — Commentary on the proposed agreement and its unanswered questions
