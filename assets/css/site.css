@@ -713,6 +713,35 @@ p:last-child {
   display: block;
 }
 
+.canvass-methodology {
+  background: var(--oc-paper);
+  padding-top: 0;
+}
+
+.canvass-methodology-grid {
+  border-top: 1px solid var(--oc-line);
+  display: grid;
+  gap: clamp(2.5rem, 7vw, 6.5rem);
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+  padding-top: clamp(3rem, 6vw, 5.5rem);
+}
+
+.canvass-methodology-grid h2 {
+  font-size: clamp(2.5rem, 5vw, 4.35rem);
+}
+
+.canvass-methodology-copy {
+  color: var(--oc-ink-soft);
+  font-size: clamp(1.05rem, 1.5vw, 1.18rem);
+  line-height: 1.72;
+}
+
+.canvass-methodology-copy p + p {
+  border-top: 1px solid var(--oc-line);
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+}
+
 .park-hero {
   padding-block: clamp(3rem, 6vw, 5rem);
 }
@@ -2656,6 +2685,11 @@ p:last-child {
     grid-template-columns: 1fr;
     margin-inline: auto;
     max-width: 44rem;
+  }
+
+  .canvass-methodology-grid {
+    gap: 2rem;
+    grid-template-columns: 1fr;
   }
 
   .history-section {
