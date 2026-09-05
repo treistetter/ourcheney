@@ -33,6 +33,7 @@ The site brings together neighborhood history, public-value context, project-sca
 - `/records/aps3/` — Atlanta Public Schools project records request
 - `/records/atldot/` — Atlanta Department of Transportation open records request
 - `/feedback/` — Public community feedback and Add Your Voice form
+- `/canvass/` — Community referendum canvassing and volunteer form
 - `/connect/` — Community updates and ways to get involved
 
 ## Stack

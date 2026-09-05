@@ -616,6 +616,103 @@ p:last-child {
   width: 28rem;
 }
 
+.canvass-hero {
+  background: var(--oc-paper);
+  border-bottom: 0;
+  padding-bottom: 1.5rem;
+}
+
+.canvass-hero .lede {
+  max-width: 47rem;
+}
+
+.canvass-content {
+  background: var(--oc-paper);
+  padding-top: 0;
+}
+
+.canvass-ballot-grid {
+  align-items: start;
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-inline: auto;
+  max-width: 59rem;
+}
+
+.canvass-ballot-figure {
+  margin: 0;
+}
+
+.canvass-ballot-figure img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.canvass-ballot-figure figcaption {
+  color: var(--oc-ink-soft);
+  font-size: 0.75rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  padding: 0.9rem 0.25rem 0.1rem;
+  text-transform: uppercase;
+}
+
+.canvass-signup {
+  border-top: 2px solid var(--oc-red);
+  display: grid;
+  gap: clamp(2.5rem, 6vw, 5.5rem);
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  margin-top: clamp(4.5rem, 9vw, 8rem);
+  padding-top: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.canvass-role {
+  align-self: start;
+}
+
+.canvass-role > p {
+  color: var(--oc-navy);
+  font-family: var(--oc-serif);
+  font-size: clamp(1.55rem, 2.6vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.22;
+  margin-bottom: 2rem;
+}
+
+.canvass-role ol {
+  counter-reset: canvass-role;
+  list-style: none;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.canvass-role li {
+  align-items: baseline;
+  border-top: 1px solid var(--oc-line);
+  counter-increment: canvass-role;
+  display: grid;
+  font-size: clamp(1rem, 1.6vw, 1.16rem);
+  font-weight: 700;
+  gap: 1rem;
+  grid-template-columns: 2.4rem 1fr;
+  padding-block: 1rem;
+}
+
+.canvass-role li::before {
+  color: var(--oc-red-dark);
+  content: "0" counter(canvass-role);
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.canvass-form iframe {
+  display: block;
+}
+
 .park-hero {
   padding-block: clamp(3rem, 6vw, 5rem);
 }
@@ -2554,6 +2651,13 @@ p:last-child {
     position: static;
   }
 
+  .canvass-signup {
+    gap: 2.5rem;
+    grid-template-columns: 1fr;
+    margin-inline: auto;
+    max-width: 44rem;
+  }
+
   .history-section {
     --bs-gutter-y: 1rem;
   }
@@ -2651,6 +2755,11 @@ p:last-child {
 
   .home-hero .hero-media {
     display: none;
+  }
+
+  .canvass-ballot-grid {
+    grid-template-columns: 1fr;
+    max-width: 29rem;
   }
 }
 
