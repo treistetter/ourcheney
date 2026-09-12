@@ -412,43 +412,47 @@
         margin-bottom: 1.5rem;
       }
 
-      .survey-comment-key {
+      .survey-choice-controls {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.65rem 1.2rem;
-        list-style: none;
-        margin: 1.25rem 0 0;
-        padding: 0;
+        gap: 0.65rem;
+        margin-top: 1.25rem;
       }
 
-      .survey-comment-key li {
-        align-items: center;
-        display: inline-flex;
-        font-size: 0.78rem;
-        font-weight: 800;
-        gap: 0.45rem;
+      .survey-choice-button-green {
+        border-color: #2f7d4a;
+        color: #2f6c42;
       }
 
-      .survey-comment-key-swatch {
-        border-radius: 50%;
-        height: 0.75rem;
-        width: 0.75rem;
-      }
-
-      .survey-comment-key-green {
+      .survey-choice-button-green:hover,
+      .survey-choice-button-green.is-active {
         background: #2f7d4a;
+        border-color: #2f7d4a;
+        color: #fff;
       }
 
-      .survey-comment-key-atc {
+      .survey-choice-button-atc {
+        border-color: #c8102e;
+        color: #a40d26;
+      }
+
+      .survey-choice-button-atc:hover,
+      .survey-choice-button-atc.is-active {
         background: #c8102e;
+        border-color: #c8102e;
+        color: #fff;
       }
 
-      .survey-comment-key-something-else {
+      .survey-choice-button-something-else {
+        border-color: #2877a8;
+        color: #1f638d;
+      }
+
+      .survey-choice-button-something-else:hover,
+      .survey-choice-button-something-else.is-active {
         background: #2877a8;
-      }
-
-      .survey-comment-key-no-preference {
-        background: #7c8587;
+        border-color: #2877a8;
+        color: #fff;
       }
 
       .survey-comments-grid {
@@ -755,17 +759,17 @@
             <div class="survey-section-intro">
               <p class="eyebrow">All feedback</p>
               <h2 id="comments-heading">Additional comments</h2>
-              <p>Browse all <span data-comment-count>—</span> additional comments or select a recurring theme. A comment may appear under more than one theme.</p>
+              <p>Browse all <span data-comment-count>—</span> additional comments or filter by original choice or recurring theme. A comment may appear under more than one theme.</p>
             </div>
 
-            <ul class="survey-comment-key" aria-label="Comment colors by original survey choice">
-              <li><span class="survey-comment-key-swatch survey-comment-key-green" aria-hidden="true"></span>Green Space</li>
-              <li><span class="survey-comment-key-swatch survey-comment-key-atc" aria-hidden="true"></span>ATC Indoor Track</li>
-              <li><span class="survey-comment-key-swatch survey-comment-key-something-else" aria-hidden="true"></span>Something Else</li>
-            </ul>
+            <div class="survey-choice-controls" aria-label="Filter comments by original survey choice">
+              <button class="survey-filter-button survey-choice-button is-active" type="button" data-comment-filter="all" aria-pressed="true">All <span class="survey-filter-count">(<span data-filter-count>—</span>)</span></button>
+              <button class="survey-filter-button survey-choice-button survey-choice-button-green" type="button" data-comment-filter="greenChoice" aria-pressed="false">Green Space <span class="survey-filter-count">(<span data-filter-count>—</span>)</span></button>
+              <button class="survey-filter-button survey-choice-button survey-choice-button-atc" type="button" data-comment-filter="trackChoice" aria-pressed="false">ATC Indoor Track <span class="survey-filter-count">(<span data-filter-count>—</span>)</span></button>
+              <button class="survey-filter-button survey-choice-button survey-choice-button-something-else" type="button" data-comment-filter="somethingElseChoice" aria-pressed="false">Something Else <span class="survey-filter-count">(<span data-filter-count>—</span>)</span></button>
+            </div>
 
-            <div class="survey-filter-controls" aria-label="Filter additional comments">
-              <button class="survey-filter-button is-active" type="button" data-comment-filter="all" aria-pressed="true">All <span class="survey-filter-count">(<span data-filter-count>—</span>)</span></button>
+            <div class="survey-filter-controls" aria-label="Filter additional comments by recurring theme">
               <button class="survey-filter-button" type="button" data-comment-filter="parking" aria-pressed="false">Parking <span class="survey-filter-count">(<span data-filter-count>—</span>)</span></button>
               <button class="survey-filter-button" type="button" data-comment-filter="greenSpace" aria-pressed="false">Green Space <span class="survey-filter-count">(<span data-filter-count>—</span>)</span></button>
               <button class="survey-filter-button" type="button" data-comment-filter="communityAccess" aria-pressed="false">Community Access <span class="survey-filter-count">(<span data-filter-count>—</span>)</span></button>

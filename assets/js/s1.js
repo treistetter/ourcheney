@@ -16,6 +16,20 @@
     somethingElse: "Something else (write in)",
     noPreference: "No preference",
   };
+  const choiceFilters = {
+    greenChoice: {
+      label: "Green Space",
+      choice: choices.greenSpace,
+    },
+    trackChoice: {
+      label: "ATC Indoor Track",
+      choice: choices.track,
+    },
+    somethingElseChoice: {
+      label: "Something Else",
+      choice: choices.somethingElse,
+    },
+  };
   const themes = {
     parking: {
       label: "Parking",
@@ -374,6 +388,7 @@
 
       card.className = `survey-comment ${choicePresentation[1]}`;
       card.dataset.comment = comment.text;
+      card.dataset.choice = comment.choice;
       heading.className = "visually-hidden";
       heading.textContent = `Survey comment ${index + 1}`;
       choiceLabel.className = "survey-comment-choice";
@@ -420,9 +435,14 @@
 
     function applyFilter(filter) {
       const theme = themes[filter];
+      const choiceFilter = choiceFilters[filter];
       let visibleCount = 0;
       container.querySelectorAll(".survey-comment").forEach(function (card) {
-        const matches = !theme || theme.pattern.test(card.dataset.comment);
+        const matches = theme
+          ? theme.pattern.test(card.dataset.comment)
+          : choiceFilter
+            ? card.dataset.choice === choiceFilter.choice
+            : true;
         card.hidden = !matches;
         if (matches) visibleCount += 1;
       });
@@ -433,15 +453,20 @@
       });
       status.textContent = theme
         ? `Showing ${visibleCount} of ${comments.length} comments about ${theme.label}.`
-        : `Showing all ${comments.length} comments.`;
+        : choiceFilter
+          ? `Showing ${visibleCount} of ${comments.length} comments from ${choiceFilter.label} responses.`
+          : `Showing all ${comments.length} comments.`;
     }
 
     buttons.forEach(function (button) {
       const filter = button.dataset.commentFilter;
       const theme = themes[filter];
+      const choiceFilter = choiceFilters[filter];
       const count = theme
         ? comments.filter((comment) => theme.pattern.test(comment.text)).length
-        : comments.length;
+        : choiceFilter
+          ? comments.filter((comment) => comment.choice === choiceFilter.choice).length
+          : comments.length;
       button.querySelector("[data-filter-count]").textContent = count;
       button.addEventListener("click", function () {
         applyFilter(filter);
