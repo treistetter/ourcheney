@@ -3,34 +3,653 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Community Survey | Our Cheney</title>
+    <meta name="description" content="Results from the Our Cheney community survey about the future of Cheney Field and the Martin Street field.">
+    <title>Community Survey Results | Our Cheney</title>
     <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/site.css?v=20260823-51">
     <style>
-      .survey-page {
-        background:
-          radial-gradient(circle at top left, rgba(239, 184, 61, 0.2), transparent 28rem),
-          var(--oc-paper);
-        min-height: 70vh;
-        padding: clamp(2rem, 5vw, 4.5rem) 0;
+      .survey-results-page {
+        background: var(--oc-paper);
       }
 
-      .survey-panel {
+      .survey-results-hero {
+        background:
+          radial-gradient(circle at 85% 20%, rgba(239, 184, 61, 0.18), transparent 21rem),
+          var(--oc-navy);
+        color: var(--oc-white);
+        overflow: hidden;
+        padding: clamp(4.5rem, 9vw, 7.5rem) 0 clamp(3.5rem, 7vw, 5.5rem);
+        position: relative;
+      }
+
+      .survey-results-hero::after {
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 50%;
+        content: "";
+        height: 30rem;
+        position: absolute;
+        right: -14rem;
+        top: -15rem;
+        width: 30rem;
+      }
+
+      .survey-results-hero .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .survey-results-hero h1 {
+        color: var(--oc-white);
+        font-size: clamp(3.2rem, 8vw, 6.4rem);
+        max-width: 56rem;
+      }
+
+      .survey-results-lead {
+        color: rgba(255, 255, 255, 0.86);
+        font-size: clamp(1.1rem, 2vw, 1.35rem);
+        max-width: 48rem;
+      }
+
+      .survey-results-meta {
+        display: grid;
+        gap: 1px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-top: 2.5rem;
+        max-width: 52rem;
+      }
+
+      .survey-results-stat {
+        background: rgba(255, 255, 255, 0.09);
+        min-height: 8.5rem;
+        padding: 1.2rem 1.35rem;
+      }
+
+      .survey-results-stat strong {
+        color: var(--oc-gold);
+        display: block;
+        font-family: var(--oc-serif);
+        font-size: clamp(2.1rem, 4vw, 3.3rem);
+        line-height: 1;
+      }
+
+      .survey-results-stat span {
+        color: rgba(255, 255, 255, 0.76);
+        display: block;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        margin-top: 0.7rem;
+        text-transform: uppercase;
+      }
+
+      .survey-results-section {
+        padding: clamp(3.5rem, 8vw, 6.5rem) 0;
+      }
+
+      .survey-results-section + .survey-results-section {
+        border-top: 1px solid var(--oc-line);
+      }
+
+      .survey-results-section-white {
+        background: var(--oc-white);
+      }
+
+      .survey-section-intro {
+        max-width: 50rem;
+      }
+
+      .survey-section-intro h2 {
+        font-size: clamp(2.2rem, 5vw, 4rem);
+      }
+
+      .survey-loading,
+      .survey-error {
+        background: var(--oc-white);
+        border: 1px solid var(--oc-line);
+        border-left: 0.4rem solid var(--oc-gold);
+        box-shadow: var(--oc-shadow);
+        margin-block: 3rem;
+        padding: 1.35rem 1.5rem;
+      }
+
+      .survey-error {
+        border-left-color: var(--oc-red);
+      }
+
+      .survey-chart-grid {
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .survey-chart-card {
         background: var(--oc-white);
         border: 1px solid var(--oc-line);
         border-radius: var(--oc-radius);
         box-shadow: var(--oc-shadow);
-        margin-inline: auto;
-        max-width: 900px;
-        overflow: hidden;
-        padding: clamp(0.5rem, 2vw, 1.5rem);
+        min-width: 0;
+        padding: clamp(1.25rem, 3vw, 2rem);
       }
 
-      .survey-panel iframe {
-        border: 0;
+      .survey-chart-card h2 {
+        font-size: clamp(1.65rem, 3vw, 2.25rem);
+      }
+
+      .survey-chart-subtitle {
+        color: var(--oc-ink-soft);
+        font-size: 0.92rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .survey-chart-svg {
         display: block;
+        height: auto;
+        margin-inline: auto;
+        max-width: 38rem;
+        overflow: visible;
         width: 100%;
+      }
+
+      .survey-pie-slice {
+        stroke: var(--oc-white);
+        stroke-width: 3;
+      }
+
+      .survey-fill-green {
+        background: #2f7d4a;
+        fill: #2f7d4a;
+      }
+
+      .survey-fill-atc {
+        background: #c8102e;
+        fill: #c8102e;
+      }
+
+      .survey-fill-light-green {
+        background: #9dcc9d;
+        fill: #9dcc9d;
+      }
+
+      .survey-fill-light-red {
+        background: #c8102e;
+        fill: #c8102e;
+      }
+
+      .survey-fill-gold {
+        background: #efb83d;
+        fill: #efb83d;
+      }
+
+      .survey-fill-gray {
+        background: #7c8587;
+        fill: #7c8587;
+      }
+
+      .survey-pie-label,
+      .survey-bar-value,
+      .survey-bar-label,
+      .survey-bar-tick {
+        font-family: var(--oc-sans);
+      }
+
+      .survey-pie-label {
+        font-size: 1.05rem;
+        font-weight: 900;
+      }
+
+      .survey-label-light {
+        fill: #fff;
+      }
+
+      .survey-label-dark,
+      .survey-pie-label-outside {
+        fill: var(--oc-navy-deep);
+      }
+
+      .survey-pie-callout {
+        stroke: var(--oc-ink);
+        stroke-width: 1.5;
+      }
+
+      .survey-bar-gridline {
+        stroke: rgba(22, 45, 51, 0.15);
+        stroke-width: 1;
+      }
+
+      .survey-bar-label {
+        fill: var(--oc-ink);
+        font-size: 0.9rem;
+        font-weight: 750;
+      }
+
+      .survey-bar-value {
+        fill: var(--oc-navy);
+        font-size: 1.15rem;
+        font-weight: 900;
+      }
+
+      .survey-bar-tick {
+        fill: var(--oc-ink-soft);
+        font-size: 0.78rem;
+      }
+
+      .survey-chart-legend {
+        display: grid;
+        gap: 0.6rem;
+        list-style: none;
+        margin: 1rem 0 0;
+        padding: 0;
+      }
+
+      .survey-chart-legend li {
+        align-items: center;
+        display: grid;
+        font-size: 0.85rem;
+        gap: 0.65rem;
+        grid-template-columns: 0.9rem 1fr auto;
+        line-height: 1.35;
+      }
+
+      .survey-chart-legend strong {
+        white-space: nowrap;
+      }
+
+      .survey-chart-swatch {
+        border: 1px solid rgba(8, 34, 41, 0.18);
+        border-radius: 50%;
+        height: 0.9rem;
+        width: 0.9rem;
+      }
+
+      .survey-method-note {
+        align-items: flex-start;
+        background: rgba(239, 184, 61, 0.16);
+        border-left: 0.3rem solid var(--oc-gold);
+        display: flex;
+        gap: 0.9rem;
+        margin-top: 1.5rem;
+        padding: 1rem 1.15rem;
+      }
+
+      .survey-method-note strong {
+        color: var(--oc-navy);
+      }
+
+      .survey-data-link {
+        margin-top: 1.5rem;
+      }
+
+      .survey-details {
+        background: var(--oc-white);
+        border: 1px solid var(--oc-line);
+        border-radius: var(--oc-radius);
+        box-shadow: var(--oc-shadow);
+        overflow: hidden;
+      }
+
+      .survey-details summary {
+        color: var(--oc-navy);
+        cursor: pointer;
+        font-family: var(--oc-serif);
+        font-size: clamp(1.35rem, 3vw, 2rem);
+        font-weight: 700;
+        line-height: 1.15;
+        padding: 1.35rem 3.5rem 1.35rem 1.5rem;
+      }
+
+      .survey-details summary::marker {
+        color: var(--oc-red);
+      }
+
+      .survey-details[open] summary {
+        border-bottom: 1px solid var(--oc-line);
+      }
+
+      .survey-table-wrap {
+        max-height: 46rem;
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+
+      .survey-write-in-table {
+        font-size: 0.92rem;
+        line-height: 1.55;
+        margin: 0;
+        table-layout: fixed;
+        width: 100%;
+      }
+
+      .survey-write-in-table th {
+        background: var(--oc-navy);
+        color: var(--oc-white);
+        font-size: 0.74rem;
+        letter-spacing: 0.07em;
+        padding: 0.9rem 1rem;
+        position: sticky;
+        text-transform: uppercase;
+        top: 0;
+        z-index: 1;
+      }
+
+      .survey-write-in-table td {
+        background: var(--oc-white);
+        border-color: var(--oc-line);
+        padding: 1rem;
+        vertical-align: top;
+        white-space: pre-line;
+      }
+
+      .survey-write-in-table th:nth-child(1),
+      .survey-write-in-table td:nth-child(1),
+      .survey-write-in-table th:nth-child(2),
+      .survey-write-in-table td:nth-child(2) {
+        overflow-wrap: anywhere;
+        width: 43%;
+      }
+
+      .survey-write-in-table th:nth-child(3),
+      .survey-write-in-table td:nth-child(3) {
+        text-align: center;
+        width: 14%;
+      }
+
+      .survey-write-in-table tbody tr:nth-child(even) td {
+        background: var(--oc-paper);
+      }
+
+      .survey-track-stance {
+        border-radius: 100vmax;
+        color: var(--oc-navy-deep);
+        display: inline-block;
+        font-size: 0.74rem;
+        font-weight: 900;
+        letter-spacing: 0.07em;
+        padding: 0.3rem 0.65rem;
+        text-transform: uppercase;
+      }
+
+      .survey-track-stance-yes {
+        background: #c8102e;
+        color: #fff;
+      }
+
+      .survey-track-stance-no {
+        background: #9dcc9d;
+      }
+
+      .survey-filter-controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.65rem;
+        margin-block: 1.75rem 1rem;
+      }
+
+      .survey-filter-button {
+        background: transparent;
+        border: 1px solid var(--oc-navy);
+        border-radius: 100vmax;
+        color: var(--oc-navy);
+        font-size: 0.82rem;
+        font-weight: 800;
+        padding: 0.55rem 0.85rem;
+      }
+
+      .survey-filter-button:hover,
+      .survey-filter-button.is-active {
+        background: var(--oc-navy);
+        color: var(--oc-white);
+      }
+
+      .survey-filter-count {
+        color: inherit;
+        opacity: 0.72;
+      }
+
+      .survey-filter-status {
+        color: var(--oc-ink-soft);
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .survey-comment-key {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.65rem 1.2rem;
+        list-style: none;
+        margin: 1.25rem 0 0;
+        padding: 0;
+      }
+
+      .survey-comment-key li {
+        align-items: center;
+        display: inline-flex;
+        font-size: 0.78rem;
+        font-weight: 800;
+        gap: 0.45rem;
+      }
+
+      .survey-comment-key-swatch {
+        border-radius: 50%;
+        height: 0.75rem;
+        width: 0.75rem;
+      }
+
+      .survey-comment-key-green {
+        background: #2f7d4a;
+      }
+
+      .survey-comment-key-atc {
+        background: #c8102e;
+      }
+
+      .survey-comment-key-something-else {
+        background: #2877a8;
+      }
+
+      .survey-comment-key-no-preference {
+        background: #7c8587;
+      }
+
+      .survey-comments-grid {
+        columns: 2 22rem;
+        column-gap: 1.25rem;
+      }
+
+      .survey-comment {
+        background: var(--oc-white);
+        border: 1px solid var(--oc-line);
+        border-top: 0.35rem solid #7c8587;
+        break-inside: avoid;
+        display: inline-block;
+        margin: 0 0 1.25rem;
+        padding: 1.25rem;
+        width: 100%;
+      }
+
+      .survey-comment-green {
+        border-top-color: #2f7d4a;
+      }
+
+      .survey-comment-atc {
+        border-top-color: #c8102e;
+      }
+
+      .survey-comment-something-else {
+        border-top-color: #2877a8;
+      }
+
+      .survey-comment-choice {
+        color: var(--oc-ink-soft);
+        font-size: 0.7rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        margin-bottom: 0.65rem;
+        text-transform: uppercase;
+      }
+
+      .survey-comment-green .survey-comment-choice {
+        color: #2f6c42;
+      }
+
+      .survey-comment-atc .survey-comment-choice {
+        color: #c8102e;
+      }
+
+      .survey-comment-something-else .survey-comment-choice {
+        color: #1f638d;
+      }
+
+      .survey-comment-preview {
+        position: relative;
+      }
+
+      .survey-comment-preview p {
+        white-space: pre-line;
+      }
+
+      .survey-comment-field p:last-child {
+        margin-bottom: 0;
+      }
+
+      .survey-comment-field-label {
+        color: var(--oc-ink-soft);
+        font-size: 0.68rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        margin-bottom: 0.35rem;
+        text-transform: uppercase;
+      }
+
+      .survey-comment-field-additional {
+        border-top: 1px solid var(--oc-line);
+        margin-top: 1rem;
+        padding-top: 1rem;
+      }
+
+      .survey-comment-preview.is-collapsed {
+        max-height: 13rem;
+        overflow: hidden;
+      }
+
+      .survey-comment.is-collapsible .survey-comment-preview.is-collapsed::after {
+        background: linear-gradient(transparent, var(--oc-white));
+        bottom: 0;
+        content: "";
+        height: 3.5rem;
+        inset-inline: 0;
+        pointer-events: none;
+        position: absolute;
+      }
+
+      .survey-comment-toggle {
+        background: transparent;
+        border: 0;
+        color: var(--oc-red-dark);
+        font-size: 0.8rem;
+        font-weight: 850;
+        margin-top: 0.65rem;
+        padding: 0;
+        text-decoration: underline;
+        text-decoration-thickness: 0.08em;
+        text-underline-offset: 0.16em;
+      }
+
+      .survey-comment-toggle:hover {
+        color: #6f251b;
+      }
+
+      .survey-comment[hidden] {
+        display: none;
+      }
+
+      @media (max-width: 991.98px) {
+        .survey-chart-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .survey-table-wrap {
+          max-height: none;
+          overflow: visible;
+        }
+
+        .survey-write-in-table,
+        .survey-write-in-table tbody,
+        .survey-write-in-table tr,
+        .survey-write-in-table td {
+          display: block;
+          width: 100% !important;
+        }
+
+        .survey-write-in-table thead {
+          clip: rect(0 0 0 0);
+          clip-path: inset(50%);
+          height: 1px;
+          overflow: hidden;
+          position: absolute;
+          white-space: nowrap;
+          width: 1px;
+        }
+
+        .survey-write-in-table tbody tr {
+          border-bottom: 1px solid var(--oc-line);
+          padding: 0.8rem 1rem 1rem;
+        }
+
+        .survey-write-in-table tbody tr:last-child {
+          border-bottom: 0;
+        }
+
+        .survey-write-in-table td,
+        .survey-write-in-table tbody tr:nth-child(even) td {
+          background: transparent;
+          border: 0;
+          padding: 0.55rem 0;
+          text-align: left;
+        }
+
+        .survey-write-in-table tbody tr:nth-child(even) {
+          background: var(--oc-paper);
+        }
+
+        .survey-write-in-table td:not(.survey-track-stance-cell)::before {
+          color: var(--oc-ink-soft);
+          content: attr(data-label);
+          display: block;
+          font-size: 0.68rem;
+          font-weight: 900;
+          letter-spacing: 0.07em;
+          margin-bottom: 0.2rem;
+          text-transform: uppercase;
+        }
+      }
+
+      @media (max-width: 575.98px) {
+        .survey-results-meta {
+          grid-template-columns: 1fr;
+        }
+
+        .survey-results-stat {
+          min-height: auto;
+        }
+
+        .survey-chart-card {
+          margin-inline: -0.25rem;
+        }
+
+        .survey-chart-legend li {
+          align-items: start;
+        }
+
+        .survey-bar-label {
+          font-size: 0.78rem;
+        }
+
+        .survey-filter-button {
+          flex: 1 1 auto;
+        }
       }
     </style>
   </head>
@@ -62,20 +681,104 @@
       </div>
     </nav>
 
-    <main class="survey-page" id="main-content">
-      <h1 class="visually-hidden">Community Survey</h1>
+    <main class="survey-results-page" id="main-content">
+      <header class="survey-results-hero">
+        <div class="container px-3 px-sm-4">
+          <p class="eyebrow eyebrow-light">The community shares its preference</p>
+          <h1>Pulse Check Responses</h1>
+          <p class="survey-results-lead mt-4">Results from the community survey about the future of Cheney Field and the Martin Street field. Each respondent is counted once using their most recent submission.</p>
+          <div class="survey-results-meta" aria-label="Survey response summary">
+            <div class="survey-results-stat"><strong data-submission-count>—</strong><span>Total submissions</span></div>
+            <div class="survey-results-stat"><strong data-unique-count>—</strong><span>Unique respondents</span></div>
+            <div class="survey-results-stat"><strong data-duplicate-count>—</strong><span>Duplicate Responses removed</span></div>
+          </div>
+        </div>
+      </header>
+
       <div class="container px-3 px-sm-4">
-        <div class="survey-panel">
-          <iframe
-            src="https://tally.so/embed/GxGoyo?alignLeft=1&amp;transparentBackground=1&amp;dynamicHeight=1"
-            title="Community survey"
-            width="100%"
-            height="800"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0"></iframe>
+        <p class="survey-loading" id="survey-loading" role="status">Loading survey results…</p>
+        <div class="survey-error" id="survey-error" role="alert" hidden>
+          <strong>Survey results could not be loaded.</strong>
+          <p class="mb-0">Please refresh the page or <a href="../assets/docs/s1.csv">download the processed survey data</a> directly.</p>
         </div>
       </div>
+
+      <div id="survey-results-content" hidden>
+        <section class="survey-results-section" aria-labelledby="results-heading">
+          <div class="container px-3 px-sm-4">
+            <div class="survey-section-intro mb-5">
+              <p class="eyebrow">Processed and tabulated results of the survery</p>
+              <h2 id="results-heading">The Results</h2>
+              <p>The pie chart assigns “Something else” responses to Green Space or Track based on what each respondent wrote. The bar chart preserves all four original survey choices.</p>
+            </div>
+
+            <div class="survey-chart-grid">
+              <article class="survey-chart-card">
+                <h2>Track Preference</h2>
+                <p class="survey-chart-subtitle"><span data-classified-count>—</span> responses included</p>
+                <div id="survey-pie-chart"></div>
+              </article>
+              <article class="survey-chart-card">
+                <h2>Raw Results</h2>
+                <p class="survey-chart-subtitle">Number of unique respondents</p>
+                <div id="survey-bar-chart"></div>
+              </article>
+            </div>
+
+            <p class="survey-method-note"><span aria-hidden="true">ⓘ</span><span><strong>How this was counted:</strong> Older submissions from the same respondent were removed throughout this page. For this first classification, a “Something else” response that rejected surface parking was grouped with Green Space. The <span data-no-preference-count>—</span> “No preference” response is included in the bar chart and excluded from the pie chart.</span></p>
+            <p class="survey-data-link"><a class="btn btn-outline-dark" href="../assets/docs/s1.csv" download>Download processed survey data</a></p>
+          </div>
+        </section>
+
+        <section class="survey-results-section survey-results-section-white" aria-labelledby="write-ins-heading">
+          <div class="container px-3 px-sm-4">
+            <div class="survey-section-intro mb-4">
+              <p class="eyebrow">In their own words</p>
+              <h2 id="write-ins-heading">Something Else responses</h2>
+              <p>Read the alternative ideas and any additional context provided by <span data-write-in-count>—</span> unique respondents.</p>
+            </div>
+
+            <details class="survey-details">
+              <summary>View all <span data-write-in-count>—</span> Something Else responses</summary>
+              <div class="survey-table-wrap" tabindex="0" aria-label="Scrollable Something Else responses">
+                <table class="table survey-write-in-table">
+                  <thead><tr><th scope="col">What would you like to see?</th><th scope="col">Additional comments</th><th scope="col"><span class="visually-hidden">Classified preference</span></th></tr></thead>
+                  <tbody id="something-else-responses"></tbody>
+                </table>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <section class="survey-results-section" aria-labelledby="comments-heading">
+          <div class="container px-3 px-sm-4">
+            <div class="survey-section-intro">
+              <p class="eyebrow">All feedback</p>
+              <h2 id="comments-heading">Additional comments</h2>
+              <p>Browse all <span data-comment-count>—</span> additional comments or select a recurring theme. A comment may appear under more than one theme.</p>
+            </div>
+
+            <ul class="survey-comment-key" aria-label="Comment colors by original survey choice">
+              <li><span class="survey-comment-key-swatch survey-comment-key-green" aria-hidden="true"></span>Green Space</li>
+              <li><span class="survey-comment-key-swatch survey-comment-key-atc" aria-hidden="true"></span>ATC Indoor Track</li>
+              <li><span class="survey-comment-key-swatch survey-comment-key-something-else" aria-hidden="true"></span>Something Else</li>
+            </ul>
+
+            <div class="survey-filter-controls" aria-label="Filter additional comments">
+              <button class="survey-filter-button is-active" type="button" data-comment-filter="all" aria-pressed="true">All <span class="survey-filter-count">(<span data-filter-count>—</span>)</span></button>
+              <button class="survey-filter-button" type="button" data-comment-filter="parking" aria-pressed="false">Parking <span class="survey-filter-count">(<span data-filter-count>—</span>)</span></button>
+              <button class="survey-filter-button" type="button" data-comment-filter="greenSpace" aria-pressed="false">Green Space <span class="survey-filter-count">(<span data-filter-count>—</span>)</span></button>
+              <button class="survey-filter-button" type="button" data-comment-filter="communityAccess" aria-pressed="false">Community Access <span class="survey-filter-count">(<span data-filter-count>—</span>)</span></button>
+              <button class="survey-filter-button" type="button" data-comment-filter="traffic" aria-pressed="false">Traffic &amp; Streets <span class="survey-filter-count">(<span data-filter-count>—</span>)</span></button>
+              <button class="survey-filter-button" type="button" data-comment-filter="environment" aria-pressed="false">Trees &amp; Environment <span class="survey-filter-count">(<span data-filter-count>—</span>)</span></button>
+            </div>
+            <p class="survey-filter-status" id="comment-filter-status" aria-live="polite"></p>
+            <div class="survey-comments-grid" id="survey-comments"></div>
+          </div>
+        </section>
+      </div>
+
+      <noscript><div class="container px-3 px-sm-4 py-5"><p class="survey-error">JavaScript is required to display the interactive results. You can still <a href="../assets/docs/s1.csv">download the processed survey data</a>.</p></div></noscript>
     </main>
 
     <footer class="site-footer">
@@ -89,12 +792,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://tally.so/widgets/embed.js"></script>
-    <script>
-      if (window.Tally) {
-        window.Tally.loadEmbeds();
-      }
-    </script>
     <script src="../assets/js/site.js?v=20260807-48"></script>
+    <script src="../assets/js/s1.js?v=20260912-1"></script>
   </body>
 </html>
