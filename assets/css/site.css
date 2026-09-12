@@ -143,7 +143,8 @@ p:last-child {
 }
 
 .nav-link:hover,
-.nav-link.active {
+.nav-link.active,
+.nav-link.dropdown-toggle.show {
   color: var(--oc-red-dark) !important;
 }
 
@@ -152,6 +153,35 @@ p:last-child {
   text-decoration-color: var(--oc-red);
   text-decoration-thickness: 0.16rem;
   text-underline-offset: 0.38rem;
+}
+
+.site-nav .dropdown-menu {
+  background: var(--oc-white);
+  border: 1px solid var(--oc-line);
+  border-radius: 0.2rem;
+  box-shadow: var(--oc-shadow);
+  margin-top: 0.7rem;
+  min-width: 11rem;
+  padding: 0.45rem;
+}
+
+.site-nav .dropdown-item {
+  color: var(--oc-ink);
+  font-size: 0.85rem;
+  font-weight: 750;
+  padding: 0.55rem 0.75rem;
+}
+
+.site-nav .dropdown-item:hover,
+.site-nav .dropdown-item:focus {
+  background: var(--oc-paper);
+  color: var(--oc-red-dark);
+}
+
+.site-nav .dropdown-item.active,
+.site-nav .dropdown-item:active {
+  background: var(--oc-red);
+  color: var(--oc-white);
 }
 
 .navbar-toggler {
@@ -2612,6 +2642,11 @@ p:last-child {
 
   .nav-link {
     padding-block: 0.65rem;
+  }
+
+  .site-nav .dropdown-menu {
+    box-shadow: none;
+    margin: 0 0 0.5rem 0.75rem;
   }
 
   .home-hero,
