@@ -12,6 +12,7 @@ The site brings together neighborhood history, public-value context, project-sca
 - `/history/` — Our History
 - `/cheney/` — History of Cheney Stadium and Cheney Field
 - `/project/` — Concise overview of the proposed indoor track project
+- `/shac/` — Visual concept for a fieldhouse with winter track competition and public recreation the rest of the year
 - `/requests/` — Public Requests about proposed track operations
 - `/requests/aps/` — APS Access to the Indoor Track
 - `/requests/usage/` — Low-, Mid-, and High-Season Weekly Usage Schedules
@@ -40,7 +41,7 @@ The site brings together neighborhood history, public-value context, project-sca
 
 - Semantic HTML5
 - Bootstrap 5.3.3 from the jsDelivr CDN
-- One custom stylesheet
+- A shared custom stylesheet, with additional styles for the SHAC concept page
 - Minimal vanilla JavaScript
 - Static directory routes compatible with GitHub Pages
 
@@ -82,6 +83,9 @@ custom domain.
 ## Content handling
 
 Documentary images are stored locally in optimized web formats.
+
+The SHAC page uses responsive WebP copies in `assets/images/shac/`, with links to
+the supplied full-size PNG renderings. All renderings are labeled as conceptual.
 
 ## Before launch
 
