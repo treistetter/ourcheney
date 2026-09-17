@@ -88,6 +88,15 @@ Documentary images are stored locally in optimized web formats.
 The SHAC page uses responsive WebP copies in `assets/images/shac/`, with links to
 the supplied full-size PNG renderings. All renderings are labeled as conceptual.
 
+Regenerate those WebP copies after replacing or adding a source PNG with:
+
+```sh
+node scripts/process-shac-images.mjs
+```
+
+The script accepts optional input and output directories and creates 1920px and
+900px WebP versions for every PNG in the input directory.
+
 The Share page uses responsive WebP copies in `assets/images/share/`, with links
 to the four full-size PNG renderings in `assets/images/`.
 
