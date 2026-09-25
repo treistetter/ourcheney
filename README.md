@@ -12,6 +12,7 @@ The site brings together neighborhood history, public-value context, project-sca
 - `/history/` — Our History
 - `/cheney/` — History of Cheney Stadium and Cheney Field
 - `/project/` — Concise overview of the proposed indoor track project
+- `/render/` — Renders of the proposed indoor track project
 - `/share/` — Community and education building concept combining everyday neighborhood services beside the field
 - `/shac/` — Visual concept for a fieldhouse with winter track competition and public recreation the rest of the year
 - `/requests/` — Public Requests about proposed track operations

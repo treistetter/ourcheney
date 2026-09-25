@@ -2608,6 +2608,92 @@ p:last-child {
   padding-top: 1.25rem;
 }
 
+.render-page {
+  background: var(--oc-navy-deep);
+}
+
+.render-hero {
+  min-height: min(78vh, 56rem);
+  overflow: hidden;
+  position: relative;
+}
+
+.render-hero::after {
+  background: linear-gradient(180deg, rgba(8, 34, 41, 0.02) 34%, rgba(8, 34, 41, 0.88) 100%);
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.render-hero img {
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  width: 100%;
+}
+
+.render-hero h1 {
+  color: var(--oc-white);
+  left: 50%;
+  margin: 0;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 2rem);
+  z-index: 1;
+}
+
+.render-hero-copy {
+  bottom: 0;
+  color: var(--oc-white);
+  left: 50%;
+  max-width: 1180px;
+  padding: clamp(2.5rem, 7vw, 6rem) 0 clamp(2.5rem, 6vw, 5rem);
+  position: absolute;
+  transform: translateX(-50%);
+  width: calc(100% - 2rem);
+  z-index: 1;
+}
+
+.render-hero-copy p {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 850px;
+}
+
+.render-gallery {
+  padding-block: clamp(1rem, 3vw, 2.5rem) clamp(4rem, 8vw, 7rem);
+}
+
+.render-gallery-grid {
+  display: grid;
+  gap: clamp(1rem, 2vw, 2rem);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.render-gallery-item {
+  background: var(--oc-white);
+  display: block;
+  overflow: hidden;
+}
+
+.render-gallery-item img {
+  display: block;
+  height: auto;
+  transition: transform 300ms ease;
+  width: 100%;
+}
+
+.render-gallery-item:hover img,
+.render-gallery-item:focus-visible img {
+  transform: scale(1.025);
+}
+
 .site-footer {
   background: var(--oc-navy-deep);
   color: rgba(255, 255, 255, 0.7);
@@ -2847,6 +2933,18 @@ p:last-child {
 
   .project-hero {
     padding-bottom: 8.5rem;
+  }
+
+  .render-hero {
+    min-height: 42rem;
+  }
+
+  .render-hero-copy {
+    width: calc(100% - 1.5rem);
+  }
+
+  .render-gallery-grid {
+    grid-template-columns: 1fr;
   }
 
   .project-map {
