@@ -1,0 +1,133 @@
+.atc-compromise-page .atc-hero {
+  background: var(--oc-paper);
+  padding-block: clamp(2.5rem, 6vw, 5rem) 0;
+}
+
+.atc-compromise-page .atc-hero h1 {
+  font-size: clamp(2.8rem, 7.2vw, 6.25rem);
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.atc-compromise-page .atc-section {
+  padding-block: clamp(3rem, 6vw, 5.5rem);
+}
+
+.atc-compromise-page h2 {
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  margin-bottom: 1.5rem;
+  text-wrap: balance;
+}
+
+.atc-compromise-page .atc-copy p,
+.atc-compromise-page .atc-section-intro > p {
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  line-height: 1.75;
+  margin-bottom: 0;
+}
+
+.atc-compromise-page .atc-split,
+.atc-compromise-page .atc-section-intro {
+  align-items: center;
+  display: grid;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.25fr);
+}
+
+.atc-compromise-page .atc-section-intro {
+  align-items: start;
+  margin-bottom: 2.5rem;
+}
+
+.atc-compromise-page .atc-section-intro h2 {
+  margin-bottom: 0;
+}
+
+.atc-compromise-page .atc-gallery {
+  display: grid;
+  gap: 1.75rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.atc-compromise-page .atc-exterior-views {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.atc-compromise-page .atc-figure {
+  margin: 0;
+  min-width: 0;
+}
+
+.atc-compromise-page .atc-figure a {
+  display: block;
+}
+
+.atc-compromise-page .atc-figure img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.atc-compromise-page .atc-figure figcaption {
+  color: var(--oc-ink-soft);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  padding-top: 0.7rem;
+}
+
+.atc-compromise-page .atc-recreation {
+  background: #edf1e8;
+  border-top: 3px solid var(--oc-sage);
+}
+
+.atc-compromise-page .atc-recreation .eyebrow {
+  color: #315e45;
+}
+
+.atc-compromise-page .atc-competition {
+  background: var(--oc-paper);
+  border-top: 3px solid var(--oc-red);
+}
+
+.atc-compromise-page .atc-community-details {
+  margin-top: 2.5rem;
+}
+
+.atc-compromise-page .atc-how {
+  background: var(--oc-paper);
+  border-top: 1px solid var(--oc-line);
+}
+
+.atc-compromise-page .atc-video {
+  aspect-ratio: 16 / 9;
+  background: var(--oc-navy-deep);
+}
+
+.atc-compromise-page .atc-video iframe {
+  border: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.atc-compromise-page .atc-video-link {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 991.98px) {
+  .atc-compromise-page .atc-split,
+  .atc-compromise-page .atc-section-intro {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .atc-compromise-page .atc-section-intro {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .atc-compromise-page .atc-gallery {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

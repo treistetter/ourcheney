@@ -13,6 +13,11 @@ The site brings together neighborhood history, public-value context, project-sca
 - `/cheney/` — History of Cheney Stadium and Cheney Field
 - `/project/` — Concise overview of the proposed indoor track project
 - `/render/` — Renders of the proposed indoor track project
+- `/compromises/atc/` — Athletic field house and community center compromise option (not linked in the top bar or footer)
+- `/compromises/aps/` — Housing and greenspace compromise option (not linked in the top bar or footer)
+- `/compromises/none/` — Proposed indoor track arena and community access (not linked in the top bar or footer)
+- `/s2/` — Three-option community survey with an embedded Tally form (not linked in the top bar or footer)
+- `/survey/` — Neighborhood survey plan, door hangers, target area, and anonymized reporting
 - `/requests/` — Public Requests about proposed track operations
 - `/requests/aps/` — APS Access to the Indoor Track
 - `/requests/usage/` — Low-, Mid-, and High-Season Weekly Usage Schedules
@@ -83,6 +88,21 @@ custom domain.
 ## Content handling
 
 Documentary images are stored locally in optimized web formats.
+
+The Athletic and Community Center compromise page uses responsive WebP images
+beside their source PNGs in `assets/images/comp/atc/`. Generate 1920px and 900px
+copies with `node scripts/process-shac-images.mjs <image-directory>` for each
+source directory; images link to the original PNGs for a closer look.
+
+The Housing and Greenspace compromise page uses responsive WebP images beside
+their source PNGs in `assets/images/comp/aps/`. Regenerate them with
+`node scripts/process-shac-images.mjs assets/images/comp/aps assets/images/comp/aps`; the full-size
+copies retain the sources' 1800px width, alongside 900px copies for smaller screens.
+
+The Proposed Indoor Track page uses responsive WebP images beside their source
+PNGs in `assets/images/comp/none/`. Regenerate them with
+`node scripts/process-shac-images.mjs assets/images/comp/none assets/images/comp/none`.
+Images link to the original PNGs for a closer look.
 
 The SHAC page uses responsive WebP copies in `assets/images/shac/`, with links to
 the supplied full-size PNG renderings. All renderings are labeled as conceptual.

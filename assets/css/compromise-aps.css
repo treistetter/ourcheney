@@ -1,0 +1,85 @@
+.aps-compromise-page .aps-hero {
+  background: var(--oc-paper);
+  padding-block: clamp(2.5rem, 6vw, 5rem) 1.5rem;
+}
+
+.aps-compromise-page .aps-hero h1 {
+  font-size: clamp(2.8rem, 7.2vw, 6.25rem);
+  margin-bottom: 1.5rem;
+  text-wrap: balance;
+}
+
+.aps-compromise-page .aps-intro {
+  font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+  max-width: 65ch;
+}
+
+.aps-compromise-page .aps-housing,
+.aps-compromise-page .aps-partnership {
+  padding-block: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.aps-compromise-page .aps-housing-grid {
+  display: grid;
+  gap: 1.75rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.aps-compromise-page .aps-housing-option {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.aps-compromise-page h2 {
+  font-size: clamp(1.85rem, 3vw, 2.65rem);
+  margin-bottom: 1rem;
+  text-wrap: balance;
+}
+
+.aps-compromise-page .aps-housing-option > p {
+  margin-bottom: 1.5rem;
+}
+
+.aps-compromise-page .aps-figure {
+  margin: 0;
+  min-width: 0;
+}
+
+.aps-compromise-page .aps-housing-option .aps-figure {
+  margin-top: auto;
+}
+
+.aps-compromise-page .aps-figure a,
+.aps-compromise-page .aps-figure img {
+  display: block;
+}
+
+.aps-compromise-page .aps-figure img {
+  height: auto;
+  width: 100%;
+}
+
+.aps-compromise-page .aps-figure figcaption {
+  color: var(--oc-ink-soft);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  padding-top: 0.7rem;
+}
+
+.aps-compromise-page .aps-partnership {
+  background: var(--oc-paper);
+  border-top: 1px solid var(--oc-line);
+}
+
+.aps-compromise-page .aps-partnership-copy {
+  max-width: 75ch;
+}
+
+@media (max-width: 767.98px) {
+  .aps-compromise-page .aps-housing-grid {
+    gap: 2.5rem;
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

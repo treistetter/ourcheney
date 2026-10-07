@@ -1,0 +1,48 @@
+.survey-hero {
+  background: var(--oc-paper);
+}
+
+.survey-hangers {
+  align-items: start;
+  display: grid;
+  gap: clamp(1rem, 3vw, 2rem);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.survey-hanger,
+.survey-map {
+  margin: 0;
+}
+
+.survey-hanger {
+  margin-inline: auto;
+  max-width: 349px;
+}
+
+.survey-hanger > a,
+.survey-map > a {
+  display: block;
+}
+
+.survey-hanger img,
+.survey-map img {
+  border: 1px solid var(--oc-line);
+  box-shadow: var(--oc-shadow);
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.survey-hanger figcaption,
+.survey-map figcaption {
+  color: var(--oc-ink-soft);
+  font-size: 0.85rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 575.98px) {
+  .survey-hangers {
+    gap: 2.5rem;
+    grid-template-columns: 1fr;
+  }
+}
