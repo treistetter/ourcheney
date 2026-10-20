@@ -89,20 +89,13 @@ custom domain.
 
 Documentary images are stored locally in optimized web formats.
 
-The Athletic and Community Center compromise page uses responsive WebP images
-beside their source PNGs in `assets/images/comp/atc/`. Generate 1920px and 900px
-copies with `node scripts/process-shac-images.mjs <image-directory>` for each
-source directory; images link to the original PNGs for a closer look.
-
-The Housing and Greenspace compromise page uses responsive WebP images beside
-their source PNGs in `assets/images/comp/aps/`. Regenerate them with
-`node scripts/process-shac-images.mjs assets/images/comp/aps assets/images/comp/aps`; the full-size
-copies retain the sources' 1800px width, alongside 900px copies for smaller screens.
-
-The Proposed Indoor Track page uses responsive WebP images beside their source
-PNGs in `assets/images/comp/none/`. Regenerate them with
-`node scripts/process-shac-images.mjs assets/images/comp/none assets/images/comp/none`.
-Images link to the original PNGs for a closer look.
+The compromise pages use only responsive WebP images in `assets/images/comp/atc/`,
+`assets/images/comp/aps/`, and `assets/images/comp/none/`. Images open the larger
+WebP versions in `/compromises/view/`, with fit-to-screen and actual-size views.
+The compromise pages use 900px copies for smaller screens. Source PNGs
+are not stored in these asset directories. Generate replacement WebP copies from
+an external source directory with
+`node scripts/process-shac-images.mjs <source-directory> <asset-directory>`.
 
 The SHAC page uses responsive WebP copies in `assets/images/shac/`, with links to
 the supplied full-size PNG renderings. All renderings are labeled as conceptual.
