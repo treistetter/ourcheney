@@ -1,5 +1,36 @@
-.survey-hero {
-  background: var(--oc-paper);
+.survey-section {
+  padding-block: clamp(2rem, 4vw, 3rem);
+}
+
+.survey-section + .survey-section {
+  border-top: 1px solid var(--oc-line);
+}
+
+.survey-page h1 {
+  font-size: clamp(2.25rem, 5vw, 3rem);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.survey-page h2 {
+  font-size: clamp(1.65rem, 3vw, 2rem);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.survey-intro {
+  max-width: 48rem;
+}
+
+.survey-form-wrap {
+  margin-inline: auto;
+  max-width: 48rem;
+  scroll-margin-top: 7rem;
+}
+
+.survey-form {
+  border: 0;
+  display: block;
 }
 
 .survey-hangers {
