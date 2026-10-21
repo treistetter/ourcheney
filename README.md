@@ -17,7 +17,7 @@ The site brings together neighborhood history, public-value context, project-sca
 - `/compromises/aps/` — Housing and greenspace compromise option (not linked in the top bar or footer)
 - `/compromises/none/` — Proposed indoor track arena and community access (not linked in the top bar or footer)
 - `/s2/` — Compromise ideas and membership survey results, with question-by-question bar charts and additional comments (not linked in the top bar or footer)
-- `/survey/` — Neighborhood survey plan, door hangers, target area, and anonymized reporting
+- `/survey/` — Neighborhood survey form, door hangers, target area, and anonymized reporting
 - `/requests/` — Public Requests about proposed track operations
 - `/requests/aps/` — APS Access to the Indoor Track
 - `/requests/usage/` — Low-, Mid-, and High-Season Weekly Usage Schedules
