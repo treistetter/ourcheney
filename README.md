@@ -13,10 +13,10 @@ The site brings together neighborhood history, public-value context, project-sca
 - `/cheney/` — History of Cheney Stadium and Cheney Field
 - `/project/` — Concise overview of the proposed indoor track project
 - `/render/` — Renders of the proposed indoor track project
-- `/discussion/community/` — Athletic field house and community center compromise option (not linked in the top bar or footer)
-- `/discussion/housing/` — Housing and greenspace compromise option (not linked in the top bar or footer)
-- `/discussion/atc/` — Proposed indoor track arena and community access (not linked in the top bar or footer)
-- `/s2/` — Compromise ideas and an embedded membership survey form (not linked in the top bar or footer)
+- `/s2/community/` — Athletic field house and community center discussion point (not linked in the top bar or footer)
+- `/s2/housing/` — Housing and greenspace discussion point (not linked in the top bar or footer)
+- `/s2/atc/` — ATC indoor track arena and community access (not linked in the top bar or footer)
+- `/s2/` — Discussion points and an embedded membership survey form (not linked in the top bar or footer)
 - `/survey/` — Neighborhood survey form, door hangers, target area, and anonymized reporting
 - `/requests/` — Public Requests about proposed track operations
 - `/requests/aps/` — APS Access to the Indoor Track
@@ -91,7 +91,7 @@ Documentary images are stored locally in optimized web formats.
 
 The discussion pages use only responsive WebP images in `assets/images/comp/atc/`,
 `assets/images/comp/aps/`, and `assets/images/comp/none/`. Images open the larger
-WebP versions in `/discussion/view/`, fitted to fill the screen without cropping.
+WebP versions in `/s2/view/`, fitted to fill the screen without cropping.
 The discussion pages use 900px copies for smaller screens. Source PNGs
 are not stored in these asset directories. Generate replacement WebP copies from
 an external source directory with
