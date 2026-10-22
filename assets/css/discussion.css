@@ -1,0 +1,26 @@
+.discussion-notice {
+  background: var(--oc-white);
+  border: 1px solid var(--oc-line);
+  border-left: 4px solid var(--oc-red);
+  color: var(--oc-ink);
+  margin-bottom: 2rem;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.discussion-notice .discussion-notice-title {
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 800;
+  line-height: 1.4;
+  margin: 0 0 0.5rem;
+}
+
+.discussion-notice p {
+  line-height: 1.65;
+  margin: 0;
+  max-width: 100ch;
+}
+
+.discussion-notice p + p {
+  margin-top: 1rem;
+}

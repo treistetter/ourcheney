@@ -13,10 +13,10 @@ The site brings together neighborhood history, public-value context, project-sca
 - `/cheney/` — History of Cheney Stadium and Cheney Field
 - `/project/` — Concise overview of the proposed indoor track project
 - `/render/` — Renders of the proposed indoor track project
-- `/compromises/atc/` — Athletic field house and community center compromise option (not linked in the top bar or footer)
-- `/compromises/aps/` — Housing and greenspace compromise option (not linked in the top bar or footer)
-- `/compromises/none/` — Proposed indoor track arena and community access (not linked in the top bar or footer)
-- `/s2/` — Compromise ideas and membership survey results, with question-by-question bar charts and additional comments (not linked in the top bar or footer)
+- `/discussion/community/` — Athletic field house and community center compromise option (not linked in the top bar or footer)
+- `/discussion/housing/` — Housing and greenspace compromise option (not linked in the top bar or footer)
+- `/discussion/atc/` — Proposed indoor track arena and community access (not linked in the top bar or footer)
+- `/s2/` — Compromise ideas and an embedded membership survey form (not linked in the top bar or footer)
 - `/survey/` — Neighborhood survey form, door hangers, target area, and anonymized reporting
 - `/requests/` — Public Requests about proposed track operations
 - `/requests/aps/` — APS Access to the Indoor Track
@@ -89,13 +89,18 @@ custom domain.
 
 Documentary images are stored locally in optimized web formats.
 
-The compromise pages use only responsive WebP images in `assets/images/comp/atc/`,
+The discussion pages use only responsive WebP images in `assets/images/comp/atc/`,
 `assets/images/comp/aps/`, and `assets/images/comp/none/`. Images open the larger
-WebP versions in `/compromises/view/`, with fit-to-screen and actual-size views.
-The compromise pages use 900px copies for smaller screens. Source PNGs
+WebP versions in `/discussion/view/`, fitted to fill the screen without cropping.
+The discussion pages use 900px copies for smaller screens. Source PNGs
 are not stored in these asset directories. Generate replacement WebP copies from
 an external source directory with
 `node scripts/process-shac-images.mjs <source-directory> <asset-directory>`.
+
+The APS housing examples use sourced project photographs and concept renderings
+in `assets/images/comp/aps/projects/`. Each has a linked source credit; proposed
+designs are labeled as concept renderings. These images also open in the
+discussion image viewer.
 
 The SHAC page uses responsive WebP copies in `assets/images/shac/`, with links to
 the supplied full-size PNG renderings. All renderings are labeled as conceptual.

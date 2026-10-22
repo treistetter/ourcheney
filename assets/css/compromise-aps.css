@@ -51,7 +51,7 @@
   margin-top: auto;
 }
 
-.aps-compromise-page .aps-figure a,
+.aps-compromise-page .aps-figure > a,
 .aps-compromise-page .aps-figure img {
   display: block;
 }

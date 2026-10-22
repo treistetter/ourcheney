@@ -74,6 +74,18 @@
   width: 100%;
 }
 
+.atc-compromise-page .atc-site-view a {
+  /* Show the middle half of the 1800 × 1400 site rendering. */
+  aspect-ratio: 18 / 7;
+  overflow: hidden;
+}
+
+.atc-compromise-page .atc-site-view img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .atc-compromise-page .atc-figure figcaption {
   color: var(--oc-ink-soft);
   font-size: 0.82rem;
