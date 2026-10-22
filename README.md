@@ -16,6 +16,7 @@ The site brings together neighborhood history, public-value context, project-sca
 - `/s2/community/` — Athletic field house and community center discussion point (not linked in the top bar or footer)
 - `/s2/housing/` — Housing and greenspace discussion point (not linked in the top bar or footer)
 - `/s2/atc/` — ATC indoor track arena and community access (not linked in the top bar or footer)
+- `/discussion/greenspace/` — Retained parkland, continued PathFC use, and a fenced dog park discussion point (not linked in the top bar or footer)
 - `/s2/` — Discussion points and an embedded membership survey form (not linked in the top bar or footer)
 - `/survey/` — Neighborhood survey form, door hangers, target area, and anonymized reporting
 - `/requests/` — Public Requests about proposed track operations
@@ -90,7 +91,7 @@ custom domain.
 Documentary images are stored locally in optimized web formats.
 
 The discussion pages use only responsive WebP images in `assets/images/comp/atc/`,
-`assets/images/comp/aps/`, and `assets/images/comp/none/`. Images open the larger
+`assets/images/comp/aps/`, `assets/images/comp/none/`, and `assets/images/comp/greenspace/`. Images open the larger
 WebP versions in `/s2/view/`, fitted to fill the screen without cropping.
 The discussion pages use 900px copies for smaller screens. Source PNGs
 are not stored in these asset directories. Generate replacement WebP copies from

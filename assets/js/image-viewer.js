@@ -9,7 +9,7 @@
   const viewport = document.getElementById("image-viewport");
 
   // Only load renderings from the discussion asset directories.
-  if (!/^(atc|aps|none)\/(?:[a-z0-9_-]+\/)*[a-z0-9_-]+\.webp$/.test(path)) {
+  if (!/^(atc|aps|none|greenspace)\/(?:[a-z0-9_-]+\/)*[a-z0-9_-]+\.webp$/.test(path)) {
     status.textContent = "Choose an image from a discussion page to view it here.";
     return;
   }
